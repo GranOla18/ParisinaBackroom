@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour, IDamage
 {
     public static PlayerManager instance;
 
     public int health;
 
+    public delegate void DamageRecieved(float actualHealth);
+    public DamageRecieved onDamageRecieved;
+
+    #region Singleton
     private void Awake()
     {
         if (instance == null)
@@ -19,11 +23,12 @@ public class PlayerManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        health = 100;
+        health = 3;
     }
 
     // Update is called once per frame
@@ -31,4 +36,19 @@ public class PlayerManager : MonoBehaviour
     {
         
     }
+
+    public void Damage()
+    {
+        health -= 1;
+
+        if (onDamageRecieved != null)
+        {
+            onDamageRecieved.Invoke(health);
+        }
+    }
+}
+
+public interface IDamage
+{
+    void Damage();
 }
