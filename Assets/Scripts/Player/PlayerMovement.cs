@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed;
     float runSpeed;
+    public float gravity = -9.81f;
+
+    Vector3 velocity;
 
     private void Start()
     {
@@ -38,5 +41,9 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
+
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime * 2);
     }
 }
