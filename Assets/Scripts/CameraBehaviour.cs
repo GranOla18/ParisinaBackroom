@@ -4,11 +4,27 @@ using UnityEngine;
 
 public class CameraBehaviour : MonoBehaviour
 {
+    public static CameraBehaviour instance;
+
     public float mouseSensitivity;
 
     public Transform player;
 
     float xRotation = 0f;
+
+    #region Singleton
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    #endregion
 
     private void Start()
     {
