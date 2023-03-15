@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.09206792, g: 0.09069813, b: 0.0905508, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -291,7 +291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 124305092}
   m_Layer: 0
-  m_Name: ParisinaEnvironment
+  m_Name: ParisinaFurnitureNoMat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,8 +318,9 @@ Transform:
   - {fileID: 300764615}
   - {fileID: 26002165}
   - {fileID: 541052018}
+  - {fileID: 210248731}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &151375631
 PrefabInstance:
@@ -764,15 +765,15 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 124305092}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5218f43dfd5e2b34195b96eed36ae5a4, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5218f43dfd5e2b34195b96eed36ae5a4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.94
+      value: 0.94000006
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5218f43dfd5e2b34195b96eed36ae5a4, type: 3}
       propertyPath: m_LocalScale.y
@@ -780,15 +781,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5218f43dfd5e2b34195b96eed36ae5a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.5
+      value: 19.65382
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5218f43dfd5e2b34195b96eed36ae5a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0000009536743
+      value: 8.435849
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5218f43dfd5e2b34195b96eed36ae5a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.54
+      value: 7.7482195
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5218f43dfd5e2b34195b96eed36ae5a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -824,6 +825,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5218f43dfd5e2b34195b96eed36ae5a4, type: 3}
+--- !u!4 &210248731 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5218f43dfd5e2b34195b96eed36ae5a4, type: 3}
+  m_PrefabInstance: {fileID: 210248730}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &255236512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,6 +1445,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ac4b09be240886540b3f6ef7a7808a3d, type: 3}
   m_PrefabInstance: {fileID: 356366472}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &386098689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 386098690}
+  m_Layer: 0
+  m_Name: ParisinaFurniture
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &386098690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386098689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &451666753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3407,7 +3443,7 @@ Transform:
   - {fileID: 653696244}
   - {fileID: 1043074935}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &698607312
 GameObject:
