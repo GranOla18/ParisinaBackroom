@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1.5
   distance: 0
-  thowForce: 3
+  thowForce: 800
 --- !u!1 &3513815901513794157
 GameObject:
   m_ObjectHideFlags: 0
