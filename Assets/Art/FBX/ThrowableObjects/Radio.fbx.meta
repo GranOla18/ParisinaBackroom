@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 94f350a5a497f1847887925042eb8bc3
+guid: 28c491795c773e7409100086301c14c8
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Body_TXT
-    second: {fileID: 2100000, guid: 9d45376b1d400524d9f8300c224f6740, type: 2}
+    second: {fileID: 2100000, guid: 75a1959a9558bda41b82ae23b0f1400a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Button_TXT
-    second: {fileID: 2100000, guid: dcf88b592f29f9f4faf11a95f4e1b9a5, type: 2}
+    second: {fileID: 2100000, guid: 7a4a65f2b45a0264faafc460b7073533, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Details_TXT
-    second: {fileID: 2100000, guid: 743522faf2d4e73479debf7235cfff2c, type: 2}
+    second: {fileID: 2100000, guid: 6a62059e992afd447a24453dce8a2d41, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Screen_TXT
-    second: {fileID: 2100000, guid: 58649f04f1d707d4e9d1f6635e69bd39, type: 2}
+    second: {fileID: 2100000, guid: 80ab8c85c8bf7fe48964241c5eb036f6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -54,7 +54,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 3
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -105,7 +105,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.02
+    globalScale: 3
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
