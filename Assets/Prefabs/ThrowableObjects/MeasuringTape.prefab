@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1842241172323351960}
   - component: {fileID: 4500226171094321490}
   - component: {fileID: 8063710620208194434}
+  - component: {fileID: 1425987314553402492}
+  - component: {fileID: 1603027090709247613}
   m_Layer: 0
   m_Name: MeasuringTape
   m_TagString: Untagged
@@ -98,3 +100,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.26817206, y: 0.33155012, z: 0.10336603}
   m_Center: {x: 0.012842465, y: 0.02577506, z: 0}
+--- !u!54 &1425987314553402492
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2699063191812565127}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1603027090709247613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2699063191812565127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bdfa102b446a21428cf063fbbe2bd73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 2
+  distance: 0
+  thowForce: 900
