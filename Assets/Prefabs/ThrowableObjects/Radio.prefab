@@ -130,4 +130,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 2
   distance: 0
-  thowForce: 900
+  thowForce: 700

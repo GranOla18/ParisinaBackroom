@@ -244,9 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bdfa102b446a21428cf063fbbe2bd73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1.5
+  radius: 2
   distance: 0
-  thowForce: 800
+  thowForce: 700
 --- !u!1 &3513815901513794157
 GameObject:
   m_ObjectHideFlags: 0
