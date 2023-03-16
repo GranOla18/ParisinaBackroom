@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 84b1b1aea7daa1a42a7c5794ae2be141
+guid: 7ac0281f19be27649b15a15a6a8cd1b1
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,23 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: BLCKplastic_TXT
-    second: {fileID: 2100000, guid: 114fae9215392ac438f9d583cf9b81c0, type: 2}
+      name: BotiquinBody_TXT
+    second: {fileID: 2100000, guid: 77c1fd3df2ba7ec4ea42e26b0bbeb0cc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Body_TXT
-    second: {fileID: 2100000, guid: d3018e7d2b1e81a41b38ea8521152594, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal_TXT
-    second: {fileID: 2100000, guid: c61eb5a55a6c621448792efe8f5e2bdb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tape_TXT
-    second: {fileID: 2100000, guid: 801d66744777e644681aae58b5ee6e78, type: 2}
+      name: BotiquinGrip_TXT
+    second: {fileID: 2100000, guid: 4637a4892981e8045a6827c1f75d0932, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -54,7 +44,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.4
+    globalScale: 2.44
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -105,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1.4
+    globalScale: 2.44
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
