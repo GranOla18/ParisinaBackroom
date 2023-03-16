@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.2
+  m_FogDensity: 0.1
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 1}
@@ -5873,7 +5873,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.2191527, g: 0.22949255, b: 0.33962262, a: 1}
-  m_Intensity: 0.15
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7555,6 +7555,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1087176483}
     m_Modifications:
+    - target: {fileID: 4554725548296480501, guid: 22753485aecdc25488b7f90d8b68b984, type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554725548296480501, guid: 22753485aecdc25488b7f90d8b68b984, type: 3}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554725548296480502, guid: 22753485aecdc25488b7f90d8b68b984, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554725548296480502, guid: 22753485aecdc25488b7f90d8b68b984, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.173
+      objectReference: {fileID: 0}
     - target: {fileID: 7101912823058856526, guid: 22753485aecdc25488b7f90d8b68b984, type: 3}
       propertyPath: m_Name
       value: FirstAid
