@@ -4861,6 +4861,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8691597707949512168, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
+      propertyPath: maxBreath
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8977641014808715192, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
       propertyPath: m_Range
       value: 10
