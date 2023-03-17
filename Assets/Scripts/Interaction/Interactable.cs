@@ -20,10 +20,9 @@ public class Interactable : MonoBehaviour
     {
         if (distance <= radius)
         {
-            Debug.Log("Can Interact");
+            //Debug.Log("Can Interact with " + name);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("cola");
                 Interact();
             }
         }
