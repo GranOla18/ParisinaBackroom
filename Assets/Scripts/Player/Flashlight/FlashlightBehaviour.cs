@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class FlashlightBehaviour : MonoBehaviour
 {
-    Light flashlight;
+    Light flLight;
     bool isOn;
+    public float chargeFlash;
+    bool canFlash;
+    float flashTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        flashlight = GetComponent<Light>();
+        flLight = GetComponent<Light>();
         isOn = true;
     }
 
@@ -21,14 +24,50 @@ public class FlashlightBehaviour : MonoBehaviour
         {
             if (!isOn)
             {
-                flashlight.enabled = true;
+                flLight.enabled = true;
                 isOn = true;
             }
             else
             {
-                flashlight.enabled = false;
+                flLight.enabled = false;
                 isOn = false;
             }
         }
+
+        if (Input.GetKey(KeyCode.G))
+        {
+            chargeFlash += Time.deltaTime;
+
+            if(chargeFlash >= 1)
+            {
+                canFlash = true;
+                Debug.Log("cola lampara");
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.G))
+        {
+            chargeFlash = 0;
+            flashTime = 0;
+
+            if (canFlash)
+            {
+                StartCoroutine(FlashRoutine());
+
+            }
+
+            canFlash = false;
+            //StartCoroutine(FlashRoutine());
+            Debug.Log("se levanto");
+        }
+    }
+
+    IEnumerator FlashRoutine()
+    {
+        flLight.intensity = 8;
+        flLight.spotAngle = 90;
+        yield return new WaitForSeconds(0.35f);
+        flLight.intensity = 2;
+        flLight.spotAngle = 60;
     }
 }
