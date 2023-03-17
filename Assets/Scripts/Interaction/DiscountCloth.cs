@@ -8,11 +8,22 @@ public class DiscountCloth : Interactable
     public bool isHidden;
     float distanceObj;
 
+    PlayerManager pM;
+
     // Start is called before the first frame update
     void Start()
     {
         hideCamera = GetComponentInChildren<Camera>();
         isHidden = false;
+        pM = PlayerManager.instance;
+        pM.isHidden = false;
+
+        PlayerManager.instance.onChokeBreath += ExitCloth;
+    }
+
+    private void OnDisable()
+    {
+        PlayerManager.instance.onChokeBreath -= ExitCloth;
     }
 
     // Update is called once per frame
@@ -44,6 +55,7 @@ public class DiscountCloth : Interactable
         CameraBehaviour.instance.GetComponent<Camera>().enabled = false;
         hideCamera.enabled = true;
         isHidden = true;
+        pM.isHidden = true;
     }
 
     public void ExitCloth()
@@ -53,5 +65,6 @@ public class DiscountCloth : Interactable
         PlayerManager.instance.GetComponent<Transform>().rotation = hideCamera.transform.rotation;
         hideCamera.enabled = false;
         isHidden = false;
+        pM.isHidden = false;
     }
 }

@@ -8,8 +8,19 @@ public class PlayerManager : MonoBehaviour, IDamage
 
     public int health;
 
+    public bool isHidden;
+
+    public int breath;
+
+    public int maxBreath;
+
+    public float timeHidden;
+
     public delegate void DamageRecieved(float actualHealth);
     public DamageRecieved onDamageRecieved;
+
+    public delegate void ChokeCloth();
+    public ChokeCloth onChokeBreath;
 
     #region Singleton
     private void Awake()
@@ -29,6 +40,7 @@ public class PlayerManager : MonoBehaviour, IDamage
     void Start()
     {
         health = 3;
+        breath = maxBreath;
     }
 
     // Update is called once per frame
@@ -44,6 +56,29 @@ public class PlayerManager : MonoBehaviour, IDamage
         if (onDamageRecieved != null)
         {
             onDamageRecieved.Invoke(health);
+        }
+    }
+
+    IEnumerator Choke()
+    {
+        while(breath > 0)
+        {
+            breath -= 1;
+            yield return new WaitForSeconds(1);
+        }
+
+        if(breath <= 0)
+        {
+            GetOutCloth();
+        }
+    }
+
+    [ContextMenu("Cola")]
+    public void GetOutCloth()
+    {
+        if(onChokeBreath != null)
+        {
+            onChokeBreath.Invoke();
         }
     }
 }
