@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 4241331300999115562}
   - component: {fileID: 8735677642289361787}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: HideCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -738,11 +738,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2666579893537068802}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.8600005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2857312739006291093}
+  m_Father: {fileID: 8443297931408634531}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!20 &8735677642289361787
@@ -869,6 +869,54 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3560191882087331575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8443297931408634531}
+  - component: {fileID: 738979123440865607}
+  m_Layer: 0
+  m_Name: HideArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8443297931408634531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560191882087331575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4241331300999115562}
+  m_Father: {fileID: 2857312739006291093}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &738979123440865607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560191882087331575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 644a7c6730d1ad244be95039f71eec60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 2
+  distance: 0
+  hideCamera: {fileID: 0}
+  isHidden: 0
 --- !u!1 &4257137298472455135
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1171,6 @@ GameObject:
   - component: {fileID: 2857312739006291093}
   - component: {fileID: 6870738125090511649}
   - component: {fileID: 2983327259209335301}
-  - component: {fileID: 8532776246773547074}
   m_Layer: 0
   m_Name: DiscountCloth
   m_TagString: Untagged
@@ -1142,7 +1189,7 @@ Transform:
   m_LocalPosition: {x: -0.5710222, y: 0.59619206, z: -1.3184371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4241331300999115562}
+  - {fileID: 8443297931408634531}
   m_Father: {fileID: 642466903069573207}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1195,22 +1242,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8532776246773547074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5315286854608188814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 644a7c6730d1ad244be95039f71eec60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 2.2
-  distance: 0
-  hideCamera: {fileID: 0}
-  isHidden: 0
 --- !u!1 &5998245871286191038
 GameObject:
   m_ObjectHideFlags: 0
