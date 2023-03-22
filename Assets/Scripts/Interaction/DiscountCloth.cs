@@ -18,12 +18,12 @@ public class DiscountCloth : Interactable
         pM = PlayerManager.instance;
         pM.isHidden = false;
 
-        PlayerManager.instance.onChokeBreath += ExitCloth;
+        pM.timeHidden = 0;
     }
 
     private void OnDisable()
     {
-        PlayerManager.instance.onChokeBreath -= ExitCloth;
+        //PlayerManager.instance.onChokeBreath -= ExitCloth;
     }
 
     // Update is called once per frame
@@ -36,6 +36,8 @@ public class DiscountCloth : Interactable
         }
         else
         {
+            pM.timeHidden += Time.deltaTime;
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 ExitCloth();
@@ -45,26 +47,32 @@ public class DiscountCloth : Interactable
 
     public override void Interact()
     {
+        pM.onChokeBreath += ExitCloth;
         base.Interact();
         Hide();
     }
 
     public void Hide()
     {
-        Debug.LogError("Escondiendo");
+        Debug.Log("Escondiendo");
         CameraBehaviour.instance.GetComponent<Camera>().enabled = false;
         hideCamera.enabled = true;
         isHidden = true;
         pM.isHidden = true;
+        StartCoroutine(pM.Choke());
     }
 
     public void ExitCloth()
     {
-        Debug.Log("Saliendo");
+        Debug.LogError("Saliendo");
         CameraBehaviour.instance.GetComponent<Camera>().enabled = true;
         PlayerManager.instance.GetComponent<Transform>().rotation = hideCamera.transform.rotation;
         hideCamera.enabled = false;
         isHidden = false;
         pM.isHidden = false;
+        pM.timeHidden = 0;
+        pM.onChokeBreath -= ExitCloth;
+        StartCoroutine(pM.RecoverBeath());
+        //StartCoroutine(pM.RecoverBeath());
     }
 }

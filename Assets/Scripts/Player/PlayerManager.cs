@@ -9,12 +9,10 @@ public class PlayerManager : MonoBehaviour, IDamage
     public int health;
 
     public bool isHidden;
-
-    public int breath;
+    public float timeHidden;
 
     public int maxBreath;
-
-    public float timeHidden;
+    public int breath;
 
     public delegate void DamageRecieved(float actualHealth);
     public DamageRecieved onDamageRecieved;
@@ -59,26 +57,41 @@ public class PlayerManager : MonoBehaviour, IDamage
         }
     }
 
-    IEnumerator Choke()
+    public IEnumerator Choke()
     {
-        while(breath > 0)
+        while(isHidden && breath > 0)
         {
-            breath -= 1;
             yield return new WaitForSeconds(1);
+            breath -= 1;
         }
 
-        if(breath <= 0)
+        if (breath <= 0)
         {
             GetOutCloth();
         }
     }
 
-    [ContextMenu("Cola")]
+    public IEnumerator RecoverBeath()
+    {
+        while((!isHidden) && (breath < maxBreath))
+        {
+            yield return new WaitForSeconds(2);
+            breath += 1;
+        }
+
+        if(breath == maxBreath)
+        {
+            //Debug.Log("Done breathing");
+        }
+    }
+
+    [ContextMenu("GetOutCloth")]
     public void GetOutCloth()
     {
         if(onChokeBreath != null)
         {
             onChokeBreath.Invoke();
+            //StartCoroutine(RecoverBeath());
         }
     }
 }
