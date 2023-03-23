@@ -64,7 +64,7 @@ public class DiscountCloth : Interactable
 
     public void ExitCloth()
     {
-        Debug.LogError("Saliendo");
+        Debug.Log("Saliendo");
         CameraBehaviour.instance.GetComponent<Camera>().enabled = true;
         PlayerManager.instance.GetComponent<Transform>().rotation = hideCamera.transform.rotation;
         hideCamera.enabled = false;
