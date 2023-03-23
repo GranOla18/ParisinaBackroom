@@ -9,6 +9,10 @@ public class ObjPickUp : Interactable
     public float thowForce;
     Rigidbody rb;
 
+    AudioSource audioSource;
+
+    public bool hasBeenThrown;
+
     public override void Interact()
     {
         base.Interact();
@@ -34,12 +38,15 @@ public class ObjPickUp : Interactable
         rb.isKinematic = false;
         rb.velocity = CameraBehaviour.instance.transform.forward * thowForce * Time.deltaTime; ;
         isPickedUp = false;
+        hasBeenThrown = true;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        hasBeenThrown = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -56,6 +63,14 @@ public class ObjPickUp : Interactable
             {
                 Throw();
             }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (hasBeenThrown)
+        {
+            audioSource.Play();
         }
     }
 }

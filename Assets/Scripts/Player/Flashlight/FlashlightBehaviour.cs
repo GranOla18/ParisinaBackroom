@@ -9,8 +9,9 @@ public class FlashlightBehaviour : MonoBehaviour
     public float chargeFlash;
     public float flBattery;
     bool canFlash;
-    float flashTime;
     bool isCharging;
+
+    public AudioClip clickSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,13 @@ public class FlashlightBehaviour : MonoBehaviour
         flLight = GetComponent<Light>();
         isOn = true;
         flBattery = 100;
+
+        SFXManager.instance.onReproduceSFX += ClickSFX;
+    }
+
+    private void OnDisable()
+    {
+        SFXManager.instance.onReproduceSFX -= ClickSFX;
     }
 
     // Update is called once per frame
@@ -25,6 +33,8 @@ public class FlashlightBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
+            ClickSFX();
+
             if (!isOn)
             {
                 flLight.enabled = true;
@@ -54,7 +64,6 @@ public class FlashlightBehaviour : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.G))
         {
             chargeFlash = 0;
-            flashTime = 0;
 
             if (canFlash)
             {
@@ -67,6 +76,11 @@ public class FlashlightBehaviour : MonoBehaviour
 
             canFlash = false;
         }
+    }
+
+    public void ClickSFX()
+    {
+        SFXManager.instance.audioSource.PlayOneShot(clickSFX);
     }
 
     IEnumerator FlashRoutine()
