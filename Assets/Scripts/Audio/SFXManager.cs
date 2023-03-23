@@ -5,7 +5,6 @@ using UnityEngine;
 public class SFXManager : MonoBehaviour
 {
     public static SFXManager instance;
-    public AudioClip[] objectsFallSFX;
 
     #region Singleton
     private void Awake()
@@ -21,10 +20,16 @@ public class SFXManager : MonoBehaviour
     }
     #endregion
 
+    public delegate void ReproduceSound();
+    public ReproduceSound onReproduceSFX;
+
+    public AudioSource audioSource;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,8 +38,13 @@ public class SFXManager : MonoBehaviour
         
     }
 
-    public void PlaySFX()
+    public void ReproduceSFX(int indiceClip)
     {
-
+        //audioSource.Play();
+        //audioSource.PlayOneShot(clipSonido[indiceClip]);
+        if (onReproduceSFX != null)
+        {
+            onReproduceSFX.Invoke();
+        }
     }
 }
