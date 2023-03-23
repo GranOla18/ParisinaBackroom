@@ -3109,6 +3109,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keys
       objectReference: {fileID: 0}
+    - target: {fileID: 7092660693009387811, guid: 9ffa31e2fe3c8854d822d2dd3b8cc246, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092660693009387811, guid: 9ffa31e2fe3c8854d822d2dd3b8cc246, type: 3}
+      propertyPath: MaxDistance
+      value: 0.505
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092660693009387811, guid: 9ffa31e2fe3c8854d822d2dd3b8cc246, type: 3}
+      propertyPath: MinDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ffa31e2fe3c8854d822d2dd3b8cc246, type: 3}
 --- !u!4 &604110827 stripped
@@ -4280,6 +4292,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2598031306016964423, guid: d9c3f79829ccf2d4ea214ab4f07ce8c7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2997456763380316134, guid: d9c3f79829ccf2d4ea214ab4f07ce8c7, type: 3}
       propertyPath: m_Name
       value: Radio
@@ -4681,6 +4697,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1288707111}
     m_Modifications:
+    - target: {fileID: -109137331584376794, guid: 11ebc5eae556f7b45887d15adca00c6d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2666210358371910718, guid: 11ebc5eae556f7b45887d15adca00c6d, type: 3}
       propertyPath: m_Name
       value: String
@@ -9088,6 +9108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeasuringTape
       objectReference: {fileID: 0}
+    - target: {fileID: 2699063191812565127, guid: 94cf4511f021ce546b2da7f464e35349, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3332433929224434237, guid: 94cf4511f021ce546b2da7f464e35349, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -9131,6 +9155,10 @@ PrefabInstance:
     - target: {fileID: 3332433929224434237, guid: 94cf4511f021ce546b2da7f464e35349, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531050985027276322, guid: 94cf4511f021ce546b2da7f464e35349, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94cf4511f021ce546b2da7f464e35349, type: 3}
