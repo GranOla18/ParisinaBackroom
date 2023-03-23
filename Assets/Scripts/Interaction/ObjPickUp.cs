@@ -9,7 +9,7 @@ public class ObjPickUp : Interactable
     public float thowForce;
     Rigidbody rb;
 
-    public AudioClip objFallSFX;
+    AudioSource audioSource;
 
     public bool hasBeenThrown;
 
@@ -46,6 +46,7 @@ public class ObjPickUp : Interactable
     {
         rb = this.GetComponent<Rigidbody>();
         hasBeenThrown = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -69,7 +70,7 @@ public class ObjPickUp : Interactable
     {
         if (hasBeenThrown)
         {
-            AudioSource.PlayClipAtPoint(objFallSFX, transform.position);
+            audioSource.Play();
         }
     }
 }
