@@ -47,6 +47,7 @@ public class PlayerManager : MonoBehaviour, IDamage
         
     }
 
+    [ContextMenu("Damage")]
     public void Damage()
     {
         health -= 1;
