@@ -8,10 +8,34 @@ public class FlashlightBehaviour : MonoBehaviour
     bool isOn;
     public float chargeFlash;
     public float flBattery;
+    public float flBattPercent;
     bool canFlash;
     bool isCharging;
 
+    public bool canChargeNext;
+
     public AudioClip clickSFX;
+
+    public static FlashlightBehaviour instance;
+
+    public delegate void BatteryChange(float newBattery);
+    public BatteryChange onBatteryChange;
+
+    public GameObject flashlight;
+
+    #region Singleton
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +45,11 @@ public class FlashlightBehaviour : MonoBehaviour
         flBattery = 100;
 
         SFXManager.instance.onReproduceSFX += ClickSFX;
+    }
+
+    private void OnEnable()
+    {
+        HUD.instance.LinkFlashlight();
     }
 
     private void OnDisable()
@@ -73,8 +102,6 @@ public class FlashlightBehaviour : MonoBehaviour
                     StartCoroutine(ChargeBattery());
                 }
             }
-
-            canFlash = false;
         }
     }
 
@@ -88,6 +115,12 @@ public class FlashlightBehaviour : MonoBehaviour
         flLight.intensity = 8;
         flLight.spotAngle = 90;
         flBattery -= 40;
+        flBattPercent = ((int)flBattery);
+        canChargeNext = false;
+        if (onBatteryChange != null)
+        {
+            onBatteryChange.Invoke(flBattPercent);
+        }
         yield return new WaitForSeconds(0.35f);
         flLight.intensity = 2;
         flLight.spotAngle = 60;
@@ -99,8 +132,29 @@ public class FlashlightBehaviour : MonoBehaviour
         {
             isCharging = true;
             flBattery += 10;
+            flBattPercent = (int)flBattery;
+            canChargeNext = true;
+            StartCoroutine(ChargePercentage(flBattPercent - 10, flBattPercent));
+            Debug.Log("Cola");
             yield return new WaitForSeconds(5f);
+            canChargeNext = false;
         }
         isCharging = false;
+    }
+
+    IEnumerator ChargePercentage(float valFirst, float valEnd)
+    {
+        float currentTime = 0;
+        while(canChargeNext)
+        {
+            currentTime += Time.deltaTime;
+            flBattPercent = Mathf.Lerp(valFirst, valEnd, currentTime / 5);
+            if (onBatteryChange != null)
+            {
+                onBatteryChange.Invoke(flBattPercent);
+            }
+            yield return new WaitForEndOfFrame();
+        }
+        
     }
 }
