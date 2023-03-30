@@ -31,12 +31,12 @@ public class HUD : MonoBehaviour
 
     private void Start()
     {
-        PlayerManager.instance.onDamageRecieved += ModifyHealth;
+        PlayerManager.instance.onHealthChanged += ModifyHealth;
     }
 
     private void OnDisable()
     {
-        PlayerManager.instance.onDamageRecieved -= ModifyHealth;
+        PlayerManager.instance.onHealthChanged -= ModifyHealth;
         FlashlightBehaviour.instance.onBatteryChange -= ModifyBattery;
     }
 

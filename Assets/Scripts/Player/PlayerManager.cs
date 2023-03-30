@@ -7,6 +7,9 @@ public class PlayerManager : MonoBehaviour, IDamage
     public static PlayerManager instance;
 
     public int health;
+    public int maxHealth;
+    public float healthPercent;
+    public bool isHealing;
 
     public bool isHidden;
     public float timeHidden;
@@ -14,8 +17,8 @@ public class PlayerManager : MonoBehaviour, IDamage
     public int maxBreath;
     public int breath;
 
-    public delegate void DamageRecieved(float actualHealth);
-    public DamageRecieved onDamageRecieved;
+    public delegate void ChangeHealth(float actualHealth);
+    public ChangeHealth onHealthChanged;
 
     public delegate void ChokeCloth();
     public ChokeCloth onChokeBreath;
@@ -50,12 +53,54 @@ public class PlayerManager : MonoBehaviour, IDamage
     [ContextMenu("Damage")]
     public void Damage()
     {
+        if(health == 1)
+        {
+            //TODO: GAME OVER
+            Debug.Log("Moricion");
+        }
         health -= 1;
 
-        if (onDamageRecieved != null)
+        if (onHealthChanged != null)
         {
-            onDamageRecieved.Invoke(health);
+            onHealthChanged.Invoke(health);
         }
+    }
+
+    [ContextMenu("Heal")]
+    public void Heal()
+    {
+        healthPercent = health;
+        //health = 3;
+        isHealing = true;
+        if(health < 2)
+        {
+            StartCoroutine(RecoverHealthRoutine(healthPercent, maxHealth, 6));
+        }
+        else if(health >= 2)
+        {
+            StartCoroutine(RecoverHealthRoutine(healthPercent, maxHealth, 3));
+        }
+    }
+
+    IEnumerator RecoverHealthRoutine(float valFirst, float valEnd, int healSpeed)
+    {
+        float currentTime = 0;
+        while (healthPercent < maxHealth)
+        {
+            currentTime += Time.deltaTime;
+            healthPercent = Mathf.Lerp(valFirst, valEnd, currentTime / healSpeed);
+
+            //Debug.Log(healthPercent);
+            if (onHealthChanged != null)
+            {
+                onHealthChanged.Invoke(healthPercent);
+            }
+            health = (int)healthPercent;
+            yield return new WaitForEndOfFrame();
+        }
+        isHealing = false;
+        health = maxHealth;
+
     }
 
     public IEnumerator Choke()
