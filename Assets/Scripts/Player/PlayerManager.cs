@@ -16,12 +16,19 @@ public class PlayerManager : MonoBehaviour, IDamage
 
     public int maxBreath;
     public int breath;
+    public float breathPercent;
+    public bool isBreathChanging;
+    public float breathSpeed;
+    public float chokeSpeed;
 
     public delegate void ChangeHealth(float actualHealth);
     public ChangeHealth onHealthChanged;
 
     public delegate void ChokeCloth();
     public ChokeCloth onChokeBreath;
+
+    public delegate void ChangeBreath(float actualBreath);
+    public ChangeBreath onBreathChanged;
 
     #region Singleton
     private void Awake()
@@ -100,32 +107,71 @@ public class PlayerManager : MonoBehaviour, IDamage
         }
         isHealing = false;
         health = maxHealth;
-
     }
 
     public IEnumerator Choke()
     {
-        while(isHidden && breath > 0)
+        //isBreathChanging = false;
+
+        while (isHidden && breath > 0)
         {
-            yield return new WaitForSeconds(1);
+            //yield return new WaitForSeconds(1);
+            //breathPercent = breath;
+            breathPercent = (int)breath;
+            isBreathChanging = true;
+            StartCoroutine(ChangeBreathLerpRoutine(breathPercent, breathPercent - 1, chokeSpeed));
             breath -= 1;
+
+            yield return new WaitForSeconds(1);
+            //isBreathChanging = false;
+
         }
+        //isBreathChanging = false;
+
+
 
         if (breath <= 0)
         {
             GetOutCloth();
+            isBreathChanging = false;
+        }
+    }
+
+    public IEnumerator ChangeBreathLerpRoutine(float valFirst, float valEnd, float speed)
+    {
+        float currentTime = 0;
+        while (isBreathChanging)
+        {
+            currentTime += Time.deltaTime;
+            breathPercent = Mathf.Lerp(valFirst, valEnd, currentTime / speed);
+
+            //Debug.Log(healthPercent);
+            if (onBreathChanged != null)
+            {
+                onBreathChanged.Invoke(breathPercent);
+                //StartCoroutine(RecoverBeath());
+            }
+            yield return new WaitForEndOfFrame();
         }
     }
 
     public IEnumerator RecoverBeath()
     {
-        while((!isHidden) && (breath < maxBreath))
+        //isBreathChanging = false;
+
+        while ((!isHidden) && (breath < maxBreath))
         {
-            yield return new WaitForSeconds(2);
+            breathPercent = breath;
+            isBreathChanging = true;
+            StartCoroutine(ChangeBreathLerpRoutine(breathPercent, breathPercent + 1, breathSpeed));
             breath += 1;
+
+            yield return new WaitForSeconds(2);
+            //isBreathChanging = false;
         }
 
-        if(breath == maxBreath)
+
+        if (breath == maxBreath)
         {
             //Debug.Log("Done breathing");
         }
@@ -137,6 +183,7 @@ public class PlayerManager : MonoBehaviour, IDamage
         if(onChokeBreath != null)
         {
             onChokeBreath.Invoke();
+            breath = 0;
             //StartCoroutine(RecoverBeath());
         }
     }

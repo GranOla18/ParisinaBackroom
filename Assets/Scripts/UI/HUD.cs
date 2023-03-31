@@ -10,6 +10,8 @@ public class HUD : MonoBehaviour
 
     public Image flashlightBar;
 
+    public Image breathBar;
+
     public static HUD instance;
 
     public delegate void UpdateHUD();
@@ -32,12 +34,14 @@ public class HUD : MonoBehaviour
     private void Start()
     {
         PlayerManager.instance.onHealthChanged += ModifyHealth;
+        PlayerManager.instance.onBreathChanged += ModifyBreath;
     }
 
     private void OnDisable()
     {
         PlayerManager.instance.onHealthChanged -= ModifyHealth;
         FlashlightBehaviour.instance.onBatteryChange -= ModifyBattery;
+        PlayerManager.instance.onBreathChanged -= ModifyBreath;
     }
 
     public void LinkFlashlight()
@@ -47,12 +51,17 @@ public class HUD : MonoBehaviour
 
     public void ModifyHealth(float newHealth)
     {
-        healthBar.fillAmount = newHealth / 3;
+        healthBar.fillAmount = newHealth / PlayerManager.instance.maxHealth;
         healthBar.color = gradient.Evaluate(healthBar.fillAmount);
     }
 
     public void ModifyBattery(float newBattery)
     {
         flashlightBar.fillAmount = newBattery / 100;
+    }
+
+    public void ModifyBreath(float newBreath)
+    {
+        breathBar.fillAmount = newBreath / PlayerManager.instance.maxBreath;
     }
 }

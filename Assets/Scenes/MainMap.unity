@@ -2681,6 +2681,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 3
   flashlightBar: {fileID: 1092590265}
+  breathBar: {fileID: 653557717}
 --- !u!1 &541052014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5321,6 +5322,22 @@ PrefabInstance:
     - target: {fileID: 8691597707949512168, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
       propertyPath: maxHealth
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691597707949512168, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
+      propertyPath: chokeSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691597707949512168, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
+      propertyPath: breathSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691597707949512168, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
+      propertyPath: breathChokeSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691597707949512168, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
+      propertyPath: recoverBreathSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8977641014808715192, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
       propertyPath: m_Range
