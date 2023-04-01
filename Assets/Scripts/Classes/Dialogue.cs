@@ -9,4 +9,14 @@ public class Dialogue
 
     [TextArea(3, 10)] 
     public string[] sentences; 
+
+    public void SetName(string newName)
+    {
+        name = newName;
+    }
+
+    public string GetName()
+    {
+        return name;
+    }
 }
