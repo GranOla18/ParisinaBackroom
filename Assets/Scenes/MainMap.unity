@@ -3492,7 +3492,7 @@ GameObject:
   - component: {fileID: 646187534}
   - component: {fileID: 646187533}
   m_Layer: 0
-  m_Name: Gerente
+  m_Name: Empleado de Entrada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3525,11 +3525,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Gerente
+    name: Empleado de Entrada
     sentences:
-    - Hola
-    - como estas
-  npcName: Gerente
+    - "Buenas tardes, \xBFen qu\xE9 le puedo ayudar? "
+    - "\xBFQu\xE9? No puede ser, ya vamos a cerrar y tu ni sabes el proceso para
+      comprar una tela."
+    - 'Ten, este folleto informativo te lo explica todo. '
+    - Recibe Folleto informativo
+    - "\xA1No vayas a tardar que te dejo encerrado!"
+  npcName: Empleado de Entrada
 --- !u!136 &646187534
 CapsuleCollider:
   m_ObjectHideFlags: 0
