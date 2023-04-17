@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 11350839}
   - component: {fileID: 11350838}
   m_Layer: 0
-  m_Name: Empleado Falso
+  m_Name: EmpleadoFalso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2037,7 +2037,7 @@ GameObject:
   - component: {fileID: 358311799}
   - component: {fileID: 358311798}
   m_Layer: 0
-  m_Name: Empleado de Tickets
+  m_Name: EmpleadoTickets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3856,7 +3856,7 @@ GameObject:
   - component: {fileID: 646187534}
   - component: {fileID: 646187533}
   m_Layer: 0
-  m_Name: Empleado de Entrada
+  m_Name: EmpleadoEntrada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9716,7 +9716,7 @@ GameObject:
   - component: {fileID: 1322401196}
   - component: {fileID: 1322401195}
   m_Layer: 0
-  m_Name: Cortador de Tela
+  m_Name: CortadorTela
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11095,7 +11095,7 @@ GameObject:
   - component: {fileID: 1390995699}
   - component: {fileID: 1390995698}
   m_Layer: 0
-  m_Name: Silueta de Empleado
+  m_Name: SiluetaEmpleado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
