@@ -7,7 +7,7 @@ public class Interactable : MonoBehaviour
     public float radius;
 
     [SerializeField]
-    float distance;
+    //float distance;
 
     private void Update()
     {
