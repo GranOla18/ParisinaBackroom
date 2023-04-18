@@ -80,5 +80,8 @@ public class DialogueSystem : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("End conversation");
+        PlayerManager.instance.isTalking = false;
+        CameraBehaviour.instance.LockOnConversation();
+        PlayerMovement.instance.ChangeSpeed();
     }
 }

@@ -14,6 +14,8 @@ public class PlayerManager : MonoBehaviour, IDamage
     public bool isHidden;
     public float timeHidden;
 
+    public bool isTalking;
+
     public int maxBreath;
     public int breath;
     public float breathPercent;
@@ -49,6 +51,7 @@ public class PlayerManager : MonoBehaviour, IDamage
     {
         health = 3;
         breath = maxBreath;
+        isTalking = false;
     }
 
     // Update is called once per frame
@@ -186,6 +189,11 @@ public class PlayerManager : MonoBehaviour, IDamage
             breath = 0;
             //StartCoroutine(RecoverBeath());
         }
+    }
+
+    public void LockOnConversation()
+    {
+
     }
 }
 

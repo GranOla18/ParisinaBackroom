@@ -6,31 +6,45 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
+    public static PlayerMovement instance;
+
     public float speed;
+    float auxSpeed;
     float runSpeed;
     public float gravity = -9.81f;
 
     Vector3 velocity;
 
+    #region Singleton
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    #endregion
+
     private void Start()
     {
         runSpeed = speed * 2.5f;
+        auxSpeed = speed;
     }
 
     private void Update()
     {
-
         if (Input.GetKey(KeyCode.LeftShift))
         {
             Movement(runSpeed);
-
         }
         else
         {
             Movement(speed);
-        }   
-
-        
+        }
     }
 
     void Movement(float speed)
@@ -45,5 +59,17 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime * 2);
+    }
+
+    public void ChangeSpeed()
+    {
+        if (PlayerManager.instance.isTalking)
+        {
+            speed = 0;
+        }
+        else
+        {
+            speed = auxSpeed;
+        }
     }
 }
