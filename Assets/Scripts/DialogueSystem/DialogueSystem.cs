@@ -7,6 +7,7 @@ public class DialogueSystem : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
+    public Canvas dialogBox;
 
     public static DialogueSystem instance;
 
@@ -30,13 +31,14 @@ public class DialogueSystem : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
-        
     }
 
     [ContextMenu("Start Conversation")]
     public void StartDialogue(Dialogue dialogue)
     {
         //Debug.Log("Starting conversation with " + dialogue.name);
+
+        dialogBox.enabled = true;
 
         nameText.text = dialogue.name;
 
@@ -79,6 +81,7 @@ public class DialogueSystem : MonoBehaviour
 
     void EndDialogue()
     {
+        dialogBox.enabled = false;
         Debug.Log("End conversation");
         PlayerManager.instance.isTalking = false;
         CameraBehaviour.instance.LockOnConversation();

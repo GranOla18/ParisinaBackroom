@@ -170,7 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0
-  distance: 0
   dialogue:
     name: Empleado Falso
     sentences:
@@ -180,6 +179,7 @@ MonoBehaviour:
     - '> Empieza a tararear <'
   npcName: Empleado Falso
   isTalking: 0
+  distanceObj: 0
 --- !u!136 &11350839
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1174,7 +1174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0
-  distance: 0
   dialogue:
     name: Guardia
     sentences:
@@ -1195,6 +1194,7 @@ MonoBehaviour:
     - Ve con cuidado.
   npcName: Guardia
   isTalking: 0
+  distanceObj: 0
 --- !u!136 &236240222
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2076,7 +2076,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0
-  distance: 0
   dialogue:
     name: Empleado de Tickets
     sentences:
@@ -2088,6 +2087,7 @@ MonoBehaviour:
     - '*Recibe Ticket de pedido*'
   npcName: Empleado de Tickets
   isTalking: 0
+  distanceObj: 0
 --- !u!136 &358311799
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2677,7 +2677,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1218350435}
+    m_TransformParent: {fileID: 1943864467}
     m_Modifications:
     - target: {fileID: 6723846594857219676, guid: 879dd16a9d1d49e4cba23693a5584d55, type: 3}
       propertyPath: m_Pivot.x
@@ -2689,7 +2689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6723846594857219676, guid: 879dd16a9d1d49e4cba23693a5584d55, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6723846594857219676, guid: 879dd16a9d1d49e4cba23693a5584d55, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2733,15 +2733,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6723846594857219676, guid: 879dd16a9d1d49e4cba23693a5584d55, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6723846594857219676, guid: 879dd16a9d1d49e4cba23693a5584d55, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6723846594857219676, guid: 879dd16a9d1d49e4cba23693a5584d55, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6723846594857219676, guid: 879dd16a9d1d49e4cba23693a5584d55, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3167,6 +3167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1825582677}
   dialogueText: {fileID: 702940927}
+  dialogBox: {fileID: 1943864470}
 --- !u!1 &541052014
 GameObject:
   m_ObjectHideFlags: 0
@@ -4010,7 +4011,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2
-  distance: 0
   dialogue:
     name: Empleado de Entrada
     sentences:
@@ -4022,6 +4022,7 @@ MonoBehaviour:
     - "\xA1No vayas a tardar que te dejo encerrado!"
   npcName: Empleado de Entrada
   isTalking: 0
+  distanceObj: 0
 --- !u!136 &646187534
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7015,7 +7016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2
-  distance: 0
   flPlayer: {fileID: 1959686483}
 --- !u!1 &1043074934
 GameObject:
@@ -8493,7 +8493,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 768233863}
-  - {fileID: 1764741421}
+  - {fileID: 1943864467}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9885,7 +9885,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0
-  distance: 0
   dialogue:
     name: Cortador de Tela
     sentences:
@@ -9897,6 +9896,7 @@ MonoBehaviour:
     - Gracias por su preferencia.
   npcName: Cortador de Tela
   isTalking: 0
+  distanceObj: 0
 --- !u!136 &1322401196
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10170,7 +10170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0
-  distance: 0
   dialogue:
     name: Mama
     sentences:
@@ -10187,6 +10186,7 @@ MonoBehaviour:
     - "Yyyyyyy!!! \nTrajiste una que no era.\r\n"
   npcName: Mama
   isTalking: 0
+  distanceObj: 0
 --- !u!136 &1336562272
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11270,7 +11270,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0
-  distance: 0
   dialogue:
     name: Silueta de Empleado
     sentences:
@@ -11284,6 +11283,7 @@ MonoBehaviour:
       quien interact\xFAas."
   npcName: Silueta de Empleado
   isTalking: 0
+  distanceObj: 0
 --- !u!136 &1390995699
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15352,6 +15352,106 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c13f7206784c41468d282582dde2c93, type: 3}
   m_PrefabInstance: {fileID: 1929042155}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1943864466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1943864467}
+  - component: {fileID: 1943864470}
+  - component: {fileID: 1943864469}
+  - component: {fileID: 1943864468}
+  m_Layer: 5
+  m_Name: Dialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1943864467
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943864466}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1764741421}
+  m_Father: {fileID: 1218350435}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1943864468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943864466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1943864469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943864466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1943864470
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943864466}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1955086028
 GameObject:
   m_ObjectHideFlags: 0
