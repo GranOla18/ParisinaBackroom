@@ -12,6 +12,8 @@ public class Interactable : MonoBehaviour
 
     public Image popUpMgs;
 
+    public bool canDamage;
+
     public virtual void CheckDistance(float distance)
     {
         if (distance <= radius)
@@ -50,9 +52,21 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    public virtual void Attack()
+    {
+        Debug.Log("Attack Player");
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        PopUp(true);
+        if (!canDamage)
+        {
+            PopUp(true);
+        }
+        else
+        {
+            Attack();
+        }
     }
 
     void OnTriggerExit(Collider other)
