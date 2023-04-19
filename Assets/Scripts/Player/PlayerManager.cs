@@ -190,11 +190,6 @@ public class PlayerManager : MonoBehaviour, IDamage
             //StartCoroutine(RecoverBeath());
         }
     }
-
-    public void LockOnConversation()
-    {
-
-    }
 }
 
 public interface IDamage

@@ -1,6 +1,7 @@
     using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Interactable : MonoBehaviour
 {
@@ -9,18 +10,14 @@ public class Interactable : MonoBehaviour
     [SerializeField]
     //float distance;
 
-    private void Update()
-    {
-        //distance = Vector3.Distance(PlayerManager.instance.transform.position, this.transform.position);
-
-        //CheckDistance(distance);
-    }
+    public Image popUpMgs;
 
     public virtual void CheckDistance(float distance)
     {
         if (distance <= radius)
         {
             //Debug.Log("Can Interact with " + name);
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Interact();
@@ -31,11 +28,35 @@ public class Interactable : MonoBehaviour
     public virtual void Interact()
     {
         Debug.Log("Interacting with " + this.name);
+        PopUp(false);
+        //PopUp();
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
+    public void PopUp(bool show)
+    {
+        if (show)
+        {
+            popUpMgs.enabled = true;
+        }
+        else
+        {
+            popUpMgs.enabled = false;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        PopUp(true);
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        PopUp(false);  
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : Interactable
 {
     public Dialogue dialogue;
-    public string npcName;
+    //public string npcName;
 
     public bool isTalking;
 
@@ -42,7 +42,7 @@ public class DialogueTrigger : Interactable
 
     public void Start()
     {
-        dialogue.SetName(npcName);
+        dialogue.SetName(dialogue.name);
     }
 
     public void Update()
