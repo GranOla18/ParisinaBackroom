@@ -13,7 +13,7 @@ public class DialogueTrigger : Interactable
 
 
     [ContextMenu("Trigger Dialogue")]
-    public void TrigegrDialogue()
+    public void TriggerDialogue()
     {
         DialogueSystem.instance.StartDialogue(dialogue);
         PlayerManager.instance.isTalking = true;
@@ -26,7 +26,7 @@ public class DialogueTrigger : Interactable
         base.Interact();
         if (!PlayerManager.instance.isTalking)
         {
-            TrigegrDialogue();
+            TriggerDialogue();
         }
         else
         {
@@ -47,22 +47,15 @@ public class DialogueTrigger : Interactable
 
     public void Update()
     {
-        //if (!PlayerManager.instance.isTalking)
-        //{
-        //    distanceObj = Vector3.Distance(PlayerManager.instance.transform.position, this.transform.position);
-        //    CheckDistance(distanceObj);
-        //}
-        //else
-        //{
-        //    Debug.Log("cola");
-        //    //if (Input.GetKeyDown(KeyCode.E))
-        //    //{
-        //    //    Debug.Log("Mostrar oracion");
-        //    //    ShowNextSentence();
-        //    //}
+        if (!PlayerManager.instance.isTalking)
+        {
+            distanceObj = Vector3.Distance(PlayerManager.instance.transform.position, this.transform.position);
+            CheckDistance(distanceObj);
+        }
 
-        //}
-        distanceObj = Vector3.Distance(PlayerManager.instance.transform.position, this.transform.position);
-        CheckDistance(distanceObj);
+        else if (PlayerManager.instance.isTalking)
+        {
+            CheckDistance(distanceObj);
+        }
     }
 }
