@@ -52,7 +52,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    public virtual void Attack()
+    public virtual void EnterTrigger()
     {
         Debug.Log("Attack Player");
     }
@@ -65,7 +65,7 @@ public class Interactable : MonoBehaviour
         }
         else
         {
-            Attack();
+            EnterTrigger();
         }
     }
 

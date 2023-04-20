@@ -105,6 +105,8 @@ GameObject:
   - component: {fileID: 6803561538277453649}
   - component: {fileID: 8759479722864892827}
   - component: {fileID: 7038956324316358113}
+  - component: {fileID: -2164528186263341516}
+  - component: {fileID: 527392425034335891}
   m_Layer: 0
   m_Name: FirstAid
   m_TagString: Untagged
@@ -190,3 +192,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.97599995, y: 0.74202573, z: 0.36094227}
   m_Center: {x: 0, y: 0.06601286, z: 0}
+--- !u!135 &-2164528186263341516
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7101912823058856526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0.06601286, z: 0}
+--- !u!114 &527392425034335891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7101912823058856526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc502c7c79e07419069c04c1e472fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 2
+  popUpMgs: {fileID: 0}
+  canDamage: 0

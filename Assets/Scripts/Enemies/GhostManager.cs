@@ -16,9 +16,9 @@ public class GhostManager : Interactable
         
     }
 
-    public override void Hurt()
+    public override void EnterTrigger()
     {
-        base.Hurt();
+        base.EnterTrigger();
         //PlayerManager.instance.GetComponent<IDamage>().Damage();
         PlayerManager.instance.Damage();
     }
