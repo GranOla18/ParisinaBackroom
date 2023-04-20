@@ -879,6 +879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8443297931408634531}
   - component: {fileID: 738979123440865607}
+  - component: {fileID: 1205392592683684996}
   m_Layer: 0
   m_Name: HideArea
   m_TagString: Untagged
@@ -914,9 +915,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2
-  distance: 0
+  popUpMgs: {fileID: 0}
+  canDamage: 0
   hideCamera: {fileID: 0}
   isHidden: 0
+--- !u!136 &1205392592683684996
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560191882087331575}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.65
+  m_Height: 3.91
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.76, z: 0.11}
 --- !u!1 &4257137298472455135
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1187,7 @@ GameObject:
   - component: {fileID: 2857312739006291093}
   - component: {fileID: 6870738125090511649}
   - component: {fileID: 2983327259209335301}
+  - component: {fileID: 6968668440290912330}
   m_Layer: 0
   m_Name: DiscountCloth
   m_TagString: Untagged
@@ -1242,6 +1259,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &6968668440290912330
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315286854608188814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.5
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.5, z: -0.7}
 --- !u!1 &5998245871286191038
 GameObject:
   m_ObjectHideFlags: 0

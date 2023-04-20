@@ -14,6 +14,12 @@ public class Interactable : MonoBehaviour
 
     public bool canDamage;
 
+    void Start()
+    {
+        PopUp(false);
+        
+    }
+
     public virtual void CheckDistance(float distance)
     {
         if (distance <= radius)
@@ -59,13 +65,16 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!canDamage)
+        if (other.GetComponent<PlayerManager>())
         {
-            PopUp(true);
-        }
-        else
-        {
-            EnterTrigger();
+            if (!canDamage)
+            {
+                PopUp(true);
+            }
+            else
+            {
+                EnterTrigger();
+            }
         }
     }
 
