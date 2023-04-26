@@ -7,6 +7,22 @@ public class CursorBehaviour : MonoBehaviour
 {
     Scene scene;
 
+    public static CursorBehaviour instance;
+
+    #region Singleton
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +35,5 @@ public class CursorBehaviour : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
