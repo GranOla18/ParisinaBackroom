@@ -7,8 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public Canvas pauseMenu;
 
-    public Button continueBtn;
-    public Button settingsBtn;
+    public Canvas warning;
 
     public static PauseMenu instance;
 
@@ -34,5 +33,10 @@ public class PauseMenu : MonoBehaviour
     public void HidePauseMenu()
     {
         pauseMenu.enabled = false;
+    }
+
+    public void ShowWarning()
+    {
+        warning.enabled = true;
     }
 }
