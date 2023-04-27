@@ -452,6 +452,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1753681822}
     m_Modifications:
     - target: {fileID: 1614288594850328256, guid: 560a6974c6b6688468150ce61b017419, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ea0388fdd6962c3488ace9a2c3d2f9ad, type: 3}
+    - target: {fileID: 1614288594850328256, guid: 560a6974c6b6688468150ce61b017419, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -3873,6 +3877,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 2030388563}
+  continueBtn: {fileID: 0}
+  settingsBtn: {fileID: 0}
 --- !u!1 &541052014
 GameObject:
   m_ObjectHideFlags: 0
