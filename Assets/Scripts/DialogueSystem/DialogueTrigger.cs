@@ -11,6 +11,8 @@ public class DialogueTrigger : Interactable
 
     public float distanceObj;
 
+    public Vector3 talkPo;
+
 
     [ContextMenu("Trigger Dialogue")]
     public void TriggerDialogue()
@@ -27,6 +29,7 @@ public class DialogueTrigger : Interactable
         if (!PlayerManager.instance.isTalking)
         {
             TriggerDialogue();
+            Debug.Log("Hablando");
         }
         else
         {
@@ -49,7 +52,8 @@ public class DialogueTrigger : Interactable
     {
         if (!PlayerManager.instance.isTalking)
         {
-            distanceObj = Vector3.Distance(PlayerManager.instance.transform.position, this.transform.position);
+            distanceObj = Vector3.Distance(PlayerManager.instance.transform.position, this.transform.position + talkPo);
+            //distanceObj = Vector3.Distance(PlayerManager.instance.transform.position, this.transform.position);
             CheckDistance(distanceObj);
         }
 

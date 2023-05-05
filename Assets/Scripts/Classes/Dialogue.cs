@@ -9,6 +9,7 @@ public class Dialogue
 
     [TextArea(3, 10)] 
     public string[] sentences; 
+    //public DialoguePoses[] sentences;
 
     public void SetName(string newName)
     {
@@ -19,4 +20,12 @@ public class Dialogue
     {
         return name;
     }
+}
+
+public class DialoguePoses
+{
+    [TextArea(3, 10)]
+    public string sentence;
+
+    public Animation pose;
 }
