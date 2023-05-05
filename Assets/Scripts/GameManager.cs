@@ -64,4 +64,9 @@ public class GameManager : MonoBehaviour
         PauseMenu.instance.HidePauseMenu();
         isPaused = false;
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

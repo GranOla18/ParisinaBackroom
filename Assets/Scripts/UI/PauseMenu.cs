@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    public Canvas pauseMenu;
+    public Canvas pauseMenuCanvas;
 
-    public Canvas warning;
+    public Canvas warningCanvas;
+
+    public Canvas settingsCanvas;
 
     public static PauseMenu instance;
 
@@ -27,16 +28,24 @@ public class PauseMenu : MonoBehaviour
 
     public void ShowPauseMenu()
     {
-        pauseMenu.enabled = true;
+        pauseMenuCanvas.enabled = true;
+        settingsCanvas.enabled = false;
+        warningCanvas.enabled = false;
     }
 
     public void HidePauseMenu()
     {
-        pauseMenu.enabled = false;
+        pauseMenuCanvas.enabled = false;
+    }
+
+    public void ShowSettings()
+    {
+        settingsCanvas.enabled = true;
+        pauseMenuCanvas.enabled = false;
     }
 
     public void ShowWarning()
     {
-        warning.enabled = true;
+        warningCanvas.enabled = true;
     }
 }
