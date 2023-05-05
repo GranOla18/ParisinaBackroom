@@ -7,9 +7,12 @@ public class Dialogue
 {
     public string name;
 
+    public enum Pose {Pose01, Pose02};
+
     [TextArea(3, 10)] 
-    public string[] sentences; 
-    //public DialoguePoses[] sentences;
+    public string[] sentences;
+
+    public Pose[] poses;
 
     public void SetName(string newName)
     {

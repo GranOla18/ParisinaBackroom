@@ -444,9 +444,11 @@ MonoBehaviour:
     - "Alooo, \xBFen qu\xE9 puedo ayudarlo esta bonita noche?"
     - "Oh, ya veo. Deme un momento y tendr\xE9 listo su pedido"
     - '> Empieza a tararear <'
+    poses: 
   isTalking: 0
   distanceObj: 0
   talkPo: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
 --- !u!136 &11350839
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1901,9 +1903,11 @@ MonoBehaviour:
       toda la l\xE1mpara tiene que recargarse, por lo que no podr\xE1 ni usar la
       l\xE1mpara normal ni el modo flash."
     - Ve con cuidado.
+    poses: 
   isTalking: 0
   distanceObj: 0
   talkPo: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
 --- !u!136 &236240222
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2934,9 +2938,11 @@ MonoBehaviour:
       ticket de tu tela."
     - Toma, este es tu ticket de pedido
     - '*Recibe Ticket de pedido*'
+    poses: 
   isTalking: 0
   distanceObj: 0
   talkPo: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
 --- !u!136 &358311799
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4060,9 +4066,11 @@ MonoBehaviour:
     - 'Ten, este folleto informativo te lo explica todo. '
     - '*Recibe Folleto informativo*'
     - "\xA1No vayas a tardar que te dejo encerrado!"
+    poses: 0000000001000000000000000100000000000000
   isTalking: 0
   distanceObj: 0
   talkPo: {x: 0, y: 0, z: 0}
+  animator: {fileID: 507514733}
 --- !u!136 &507514737
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4248,6 +4256,7 @@ MonoBehaviour:
   nameText: {fileID: 1825582677}
   dialogueText: {fileID: 702940927}
   dialogBox: {fileID: 1943864470}
+  idx: 0
 --- !u!114 &518331005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5357,9 +5366,11 @@ MonoBehaviour:
     - 'Ten, este folleto informativo te lo explica todo. '
     - '*Recibe Folleto informativo*'
     - "\xA1No vayas a tardar que te dejo encerrado!"
+    poses: 
   isTalking: 0
   distanceObj: 0
   talkPo: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
 --- !u!136 &646187534
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12210,9 +12221,11 @@ MonoBehaviour:
     - Todo listo. Hago entrega de la tela requerida.
     - '*Recibe Tela cortada*'
     - Gracias por su preferencia.
+    poses: 
   isTalking: 0
   distanceObj: 0
   talkPo: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
 --- !u!136 &1322401196
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12516,9 +12529,11 @@ MonoBehaviour:
     - "\xA1\xC1ndale ap\xFArate!\r\nSolo era una simple tela.\r"
     - "\u2026\r\n"
     - "Yyyyyyy!!! \nTrajiste una que no era.\r\n"
+    poses: 
   isTalking: 0
   distanceObj: 0
   talkPo: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
 --- !u!136 &1336562272
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13624,9 +13639,11 @@ MonoBehaviour:
     - Listo.
     - "Oye chamaco, recuerda solicitar tu pedido un Empleado Real, ten cuidado con
       quien interact\xFAas."
+    poses: 
   isTalking: 0
   distanceObj: 0
   talkPo: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
 --- !u!136 &1390995699
 CapsuleCollider:
   m_ObjectHideFlags: 0

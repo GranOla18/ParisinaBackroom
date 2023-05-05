@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : Interactable
 {
     public Dialogue dialogue;
+
     //public string npcName;
 
     public bool isTalking;
@@ -13,6 +14,9 @@ public class DialogueTrigger : Interactable
 
     public Vector3 talkPo;
 
+    private Queue<string> poses;
+
+    public Animator animator;
 
     [ContextMenu("Trigger Dialogue")]
     public void TriggerDialogue()
@@ -21,6 +25,15 @@ public class DialogueTrigger : Interactable
         PlayerManager.instance.isTalking = true;
         PlayerMovement.instance.ChangeSpeed();
         CameraBehaviour.instance.LockOnConversation();
+
+        foreach (Dialogue.Pose pose in dialogue.poses)
+        {
+            //Debug.Log(pose.ToString());
+            poses.Enqueue(pose.ToString());
+        }
+
+        animator.SetTrigger(poses.Dequeue());
+
     }
 
     public override void Interact()
@@ -41,11 +54,21 @@ public class DialogueTrigger : Interactable
     public void ShowNextSentence()
     {
         DialogueSystem.instance.DisplayNextSentence();
+
+        if (poses.Count == 0)
+        {
+            animator.SetTrigger("Idle");
+        }
+        else
+        {
+            animator.SetTrigger(poses.Dequeue());
+        }
     }
 
     public void Start()
     {
         dialogue.SetName(dialogue.name);
+        poses = new Queue<string>();
     }
 
     public void Update()

@@ -64,6 +64,7 @@ public class DialogueSystem : MonoBehaviour
         string sentence = sentences.Dequeue();
         //Debug.Log(sentence);
         //dialogueText.text = sentence;
+
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
