@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DialogueTrigger : Interactable
 {
+    public Animator animator;
+
     public Dialogue dialogue;
 
     //public string npcName;
@@ -12,11 +14,9 @@ public class DialogueTrigger : Interactable
 
     public float distanceObj;
 
-    public Vector3 talkPo;
+    public Vector3 talkPos;
 
     private Queue<string> poses;
-
-    public Animator animator;
 
     [ContextMenu("Trigger Dialogue")]
     public void TriggerDialogue()
@@ -69,13 +69,14 @@ public class DialogueTrigger : Interactable
     {
         dialogue.SetName(dialogue.name);
         poses = new Queue<string>();
+        animator = this.gameObject.GetComponent<Animator>();
     }
 
     public void Update()
     {
         if (!PlayerManager.instance.isTalking)
         {
-            distanceObj = Vector3.Distance(PlayerManager.instance.transform.position, this.transform.position + talkPo);
+            distanceObj = Vector3.Distance(PlayerManager.instance.transform.position, this.transform.position + talkPos);
             //distanceObj = Vector3.Distance(PlayerManager.instance.transform.position, this.transform.position);
             CheckDistance(distanceObj);
         }

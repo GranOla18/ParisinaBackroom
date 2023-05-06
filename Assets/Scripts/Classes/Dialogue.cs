@@ -7,7 +7,7 @@ public class Dialogue
 {
     public string name;
 
-    public enum Pose {Pose01, Pose02};
+    public enum Pose {P01, P02, P03, P04};
 
     [TextArea(3, 10)] 
     public string[] sentences;
