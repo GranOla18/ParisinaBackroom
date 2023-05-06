@@ -3725,6 +3725,95 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879dd16a9d1d49e4cba23693a5584d55, type: 3}
+--- !u!1 &472963567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+  m_PrefabInstance: {fileID: 2117659904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &472963568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472963567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  popUpMgs: {fileID: 1501047984}
+  canDamage: 0
+  animator: {fileID: 0}
+  dialogue:
+    name: Guardia
+    sentences:
+    - "Las luces de la tienda est\xE1n fallando de nuevo, ya deber\xEDan arreglarlas."
+    - "Me preocupa que se vayan a apagar las luces de repente, \r\ntoma esta linterna
+      por si llega a pasar.\r\n"
+    - '*Recibe Linterna*'
+    - Tiene dos modos; modo normal y modo flash.
+    - El segundo modo emite un flash fuerte y corto, personalmente lo ocupo para
+      espantar animales,
+    - "pero una vez que lo use en mi colega lo aturdi\xF3 por un momento."
+    - "Ten cuidado en c\xF3mo usas el modo flash ya que despu\xE9s de un par de usos
+      toda la l\xE1mpara tiene que recargarse, por lo que no podr\xE1 ni usar la
+      l\xE1mpara normal ni el modo flash."
+    - "Ten cuidado en c\xF3mo usas el modo flash ya que despu\xE9s de un par de usos
+      toda la l\xE1mpara tiene que recargarse, por lo que no podr\xE1 ni usar la
+      l\xE1mpara normal ni el modo flash."
+    - Ve con cuidado.
+    poses: 0000000001000000
+  isTalking: 0
+  distanceObj: 0
+  talkPos: {x: 0, y: 0, z: 0}
+--- !u!65 &472963569
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472963567}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2.5, z: 1.5}
+  m_Center: {x: 0, y: 2, z: 1}
+--- !u!136 &472963570
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472963567}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 0, y: 2, z: 0}
+--- !u!95 &472963571
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472963567}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 260b6eeb14aaade42886cb9292c738c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &486146516
 GameObject:
   m_ObjectHideFlags: 0
@@ -6346,7 +6435,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2806852702058930879, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: m_Name
-      value: WorkerTickets (1)
+      value: WorkerCashier
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: radius
@@ -9299,63 +9388,6 @@ Transform:
   m_Father: {fileID: 697482691}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1001 &1108686631
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.12
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -14.42
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-      propertyPath: m_Name
-      value: Guard_Idle
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
 --- !u!1 &1117259147
 GameObject:
   m_ObjectHideFlags: 0
@@ -14804,95 +14836,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 642466903069573207, guid: 750cbf690afdea143ae41e8e2aade7aa, type: 3}
   m_PrefabInstance: {fileID: 1446822834}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1448824881 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e99ab649a327e94cade2a82aaa99ce1, type: 3}
-  m_PrefabInstance: {fileID: 1108686631}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1448824882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448824881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 2
-  popUpMgs: {fileID: 1501047984}
-  canDamage: 0
-  animator: {fileID: 0}
-  dialogue:
-    name: Guardia
-    sentences:
-    - "Las luces de la tienda est\xE1n fallando de nuevo, ya deber\xEDan arreglarlas."
-    - "Me preocupa que se vayan a apagar las luces de repente, \r\ntoma esta linterna
-      por si llega a pasar.\r\n"
-    - '*Recibe Linterna*'
-    - Tiene dos modos; modo normal y modo flash.
-    - El segundo modo emite un flash fuerte y corto, personalmente lo ocupo para
-      espantar animales,
-    - "pero una vez que lo use en mi colega lo aturdi\xF3 por un momento."
-    - "Ten cuidado en c\xF3mo usas el modo flash ya que despu\xE9s de un par de usos
-      toda la l\xE1mpara tiene que recargarse, por lo que no podr\xE1 ni usar la
-      l\xE1mpara normal ni el modo flash."
-    - "Ten cuidado en c\xF3mo usas el modo flash ya que despu\xE9s de un par de usos
-      toda la l\xE1mpara tiene que recargarse, por lo que no podr\xE1 ni usar la
-      l\xE1mpara normal ni el modo flash."
-    - Ve con cuidado.
-    poses: 0000000001000000
-  isTalking: 0
-  distanceObj: 0
-  talkPos: {x: 0, y: 0, z: 0}
---- !u!136 &1448824883
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448824881}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 4
-  m_Direction: 1
-  m_Center: {x: 0, y: 2, z: 0}
---- !u!65 &1448824884
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448824881}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 2.5, z: 1.5}
-  m_Center: {x: 0, y: 2, z: 1}
---- !u!95 &1448824885
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448824881}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b0a0b02833891d740a8a18966cb5818b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1452766079
 GameObject:
   m_ObjectHideFlags: 0
@@ -20533,6 +20476,63 @@ Transform:
   m_Father: {fileID: 697482691}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1001 &2117659904
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.32
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.63
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
+      propertyPath: m_Name
+      value: Guard_Idle (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f1e4589f844a684c8d64093f7f390df, type: 3}
 --- !u!1 &2128919879
 GameObject:
   m_ObjectHideFlags: 0
