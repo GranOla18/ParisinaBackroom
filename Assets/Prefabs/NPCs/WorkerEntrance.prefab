@@ -871,6 +871,7 @@ GameObject:
   - component: {fileID: 3040660342727593585}
   - component: {fileID: 3040660342727593583}
   - component: {fileID: 3040660342727593582}
+  - component: {fileID: -7284180821882284809}
   m_Layer: 0
   m_Name: WorkerEntrance
   m_TagString: Untagged
@@ -966,6 +967,7 @@ MonoBehaviour:
   radius: 3
   popUpMgs: {fileID: 0}
   canDamage: 0
+  animator: {fileID: 3040660342727593587}
   dialogue:
     name: Empleado de Entrada
     sentences:
@@ -978,8 +980,20 @@ MonoBehaviour:
     poses: 0000000001000000020000000300000000000000
   isTalking: 0
   distanceObj: 0
-  talkPo: {x: 0, y: 0, z: 0}
-  animator: {fileID: 3040660342727593587}
+  talkPos: {x: 0, y: 0, z: 0}
+--- !u!114 &-7284180821882284809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2806852702058930879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e936b2b35e3c564daea69a7b9780e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueTrigger: {fileID: 0}
 --- !u!1 &3466319971518036117
 GameObject:
   m_ObjectHideFlags: 0

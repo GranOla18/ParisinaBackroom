@@ -18,6 +18,9 @@ public class DialogueTrigger : Interactable
 
     private Queue<string> poses;
 
+    public delegate void NPCPose();
+    public NPCPose onPoseChange;
+
     [ContextMenu("Trigger Dialogue")]
     public void TriggerDialogue()
     {
@@ -59,10 +62,15 @@ public class DialogueTrigger : Interactable
         {
             animator.SetTrigger("Idle");
         }
-        else
+        else if (onPoseChange != null)
         {
-            animator.SetTrigger(poses.Dequeue());
+            onPoseChange.Invoke();
         }
+    }
+
+    public void ChangePose()
+    {
+        animator.SetTrigger(poses.Dequeue());
     }
 
     public void Start()

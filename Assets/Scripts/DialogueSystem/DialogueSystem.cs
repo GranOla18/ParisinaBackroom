@@ -11,7 +11,7 @@ public class DialogueSystem : MonoBehaviour
 
     public static DialogueSystem instance;
 
-    private Queue<string> sentences;
+    public Queue<string> sentences;
 
     #region Singleton
     private void Awake()
