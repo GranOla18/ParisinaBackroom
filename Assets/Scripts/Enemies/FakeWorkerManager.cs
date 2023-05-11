@@ -28,7 +28,7 @@ public class FakeWorkerManager : MonoBehaviour
     {
         skin.materials = fakeMATS;
         //Debug.Log("changed");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.5f);
         //Debug.Log("return");
         skin.materials = realMATS;
     }

@@ -23,6 +23,11 @@ public class FlashlightBehaviour : MonoBehaviour
 
     public GameObject flashlight;
 
+    Ray flRay;
+    RaycastHit flHit;
+
+    public float coladist;
+
     #region Singleton
     private void Awake()
     {
@@ -58,8 +63,59 @@ public class FlashlightBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.F))
+    //    {
+    //        ClickSFX();
+
+    //        if (!isOn)
+    //        {
+    //            flLight.enabled = true;
+    //            isOn = true;
+    //        }
+    //        else
+    //        {
+    //            flLight.enabled = false;
+    //            isOn = false;
+    //        }
+    //    }
+
+    //    if (Input.GetKey(KeyCode.G))
+    //    {
+    //        chargeFlash += Time.deltaTime;
+
+    //        if(chargeFlash >= 1 && flBattery >= 40)
+    //        {
+    //            canFlash = true;
+    //        }
+    //        else
+    //        {
+    //            canFlash = false;
+    //        }
+    //    }
+
+    //    if (Input.GetKeyUp(KeyCode.G))
+    //    {
+    //        chargeFlash = 0;
+
+    //        if (canFlash)
+    //        {
+    //            StartCoroutine(FlashRoutine());
+
+    //            if (!isCharging)
+    //            {
+    //                StartCoroutine(ChargeBattery());
+    //            }
+    //        }
+    //    }
+    //}
+
+    private void FixedUpdate()
     {
+        flRay.origin = transform.position;
+        flRay.direction = transform.forward;
+
         if (Input.GetKeyDown(KeyCode.F))
         {
             ClickSFX();
@@ -80,7 +136,7 @@ public class FlashlightBehaviour : MonoBehaviour
         {
             chargeFlash += Time.deltaTime;
 
-            if(chargeFlash >= 1 && flBattery >= 40)
+            if (chargeFlash >= 1 && flBattery >= 40)
             {
                 canFlash = true;
             }
@@ -97,12 +153,40 @@ public class FlashlightBehaviour : MonoBehaviour
             if (canFlash)
             {
                 StartCoroutine(FlashRoutine());
+
+                if (Physics.Raycast(flRay, out flHit))
+                {
+                    Debug.DrawLine(flRay.origin, flHit.point, Color.red);
+                    //Debug.Log("Ray hit distance " + flHit.distance);
+                    //coladist = flHit.distance;
+
+                    if (flHit.collider.GetComponentInChildren<FakeWorkerManager>() && (flHit.distance < 1.5))
+                    {
+                        //choque.collider.GetComponent<FakeWorkerManager>().ShowFakeMAT();
+
+                        //Debug.Log("pene");
+                        flHit.collider.GetComponentInChildren<FakeWorkerManager>().ShowFakeMAT();
+                    }
+                    else
+                    {
+                        //Debug.Log("pitito");
+                    }
+                }
+
                 if (!isCharging)
                 {
                     StartCoroutine(ChargeBattery());
                 }
             }
         }
+
+        //if (Physics.Raycast(flRay, out flHit))
+        //{
+        //    Debug.Log("Ray hit distance " + flHit.distance);
+        //    coladist = flHit.distance;
+
+        //    Debug.DrawLine(flRay.origin, flHit.point, Color.blue);
+        //}
     }
 
     public void ClickSFX()

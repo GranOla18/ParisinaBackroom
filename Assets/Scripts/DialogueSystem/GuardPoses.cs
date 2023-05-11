@@ -13,11 +13,11 @@ public class GuardPoses : MonoBehaviour
     [ContextMenu("Next Sentence")]
     public void ChangeGuardPose()
     {
-        if (DialogueSystem.instance.sentences.Count == 6)
+        if (DialogueSystem.instance.sentences.Count == 5)
         {
             animator.SetTrigger("Give");
         }
-        else if(DialogueSystem.instance.sentences.Count == 5)
+        else if(DialogueSystem.instance.sentences.Count == 4)
         {
             GiveFL();
             animator.SetTrigger("Idle");
