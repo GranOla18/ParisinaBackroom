@@ -20721,6 +20721,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154734082}
     m_Modifications:
+    - target: {fileID: -7758134724712315614, guid: d215930d54a7ead438f0c4797e192603, type: 3}
+      propertyPath: flPlayer
+      value: 
+      objectReference: {fileID: 1959686483}
     - target: {fileID: 3604605788892876020, guid: d215930d54a7ead438f0c4797e192603, type: 3}
       propertyPath: popUpMgs
       value: 
@@ -20910,7 +20914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &7860399252274628553
 SphereCollider:
   m_ObjectHideFlags: 0

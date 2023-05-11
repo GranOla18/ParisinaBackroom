@@ -135,7 +135,7 @@ public class FlashlightBehaviour : MonoBehaviour
             flBattPercent = (int)flBattery;
             canChargeNext = true;
             StartCoroutine(ChargePercentage(flBattPercent - 10, flBattPercent));
-            Debug.Log("Cola");
+            //Debug.Log("Cola");
             yield return new WaitForSeconds(5f);
             canChargeNext = false;
         }

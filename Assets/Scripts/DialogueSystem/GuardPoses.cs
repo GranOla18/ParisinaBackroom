@@ -7,12 +7,20 @@ public class GuardPoses : MonoBehaviour
     public DialogueTrigger dialogueTrigger;
     public Animator animator;
 
+    public GameObject flPlayer;
+    public GameObject flGuard;
+
     [ContextMenu("Next Sentence")]
     public void ChangeGuardPose()
     {
         if (DialogueSystem.instance.sentences.Count == 6)
         {
             animator.SetTrigger("Give");
+        }
+        else if(DialogueSystem.instance.sentences.Count == 5)
+        {
+            GiveFL();
+            animator.SetTrigger("Idle");
         }
         else
         {
@@ -30,5 +38,11 @@ public class GuardPoses : MonoBehaviour
     private void OnDisable()
     {
         dialogueTrigger.onPoseChange -= ChangeGuardPose;
+    }
+
+    public void GiveFL()
+    {
+        flPlayer.SetActive(true);
+        flGuard.SetActive(false);
     }
 }
