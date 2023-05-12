@@ -26,7 +26,8 @@ public class FlashlightBehaviour : MonoBehaviour
     Ray flRay;
     RaycastHit flHit;
 
-    public float coladist;
+    [SerializeField]
+    private float showFakeWorkerDist;
 
     #region Singleton
     private void Awake()
@@ -160,7 +161,7 @@ public class FlashlightBehaviour : MonoBehaviour
                     //Debug.Log("Ray hit distance " + flHit.distance);
                     //coladist = flHit.distance;
 
-                    if (flHit.collider.GetComponentInChildren<FakeWorkerManager>() && (flHit.distance < 1.5))
+                    if (flHit.collider.GetComponentInChildren<FakeWorkerManager>() && (flHit.distance < showFakeWorkerDist))
                     {
                         //choque.collider.GetComponent<FakeWorkerManager>().ShowFakeMAT();
 

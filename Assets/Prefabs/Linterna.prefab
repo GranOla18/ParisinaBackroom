@@ -108,8 +108,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chargeFlash: 0
   flBattery: 0
+  flBattPercent: 0
+  canChargeNext: 0
   clickSFX: {fileID: 8300000, guid: 652a6073a689037419abaddee5ca5789, type: 3}
   flashlight: {fileID: 4503853819490119611}
+  coladist: 0
+  showFakeWorkerDist: 1.5
 --- !u!1 &4503853819490119611
 GameObject:
   m_ObjectHideFlags: 0
