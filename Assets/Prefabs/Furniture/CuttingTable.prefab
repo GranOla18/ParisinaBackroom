@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6072407242035787515}
   - component: {fileID: 8332065577415574065}
   - component: {fileID: 1504217559639032460}
+  - component: {fileID: 4234892304946287406}
   m_Layer: 0
   m_Name: CuttingTable
   m_TagString: Untagged
@@ -96,3 +97,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.2233644, y: 2.6666095, z: 2.6738198}
   m_Center: {x: -2.496013, y: -1.2673048, z: -1.2212404}
+--- !u!208 &4234892304946287406
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7539462348599337956}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.6120002, y: 1.3330001, z: 1.337}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -2.496, y: -1.2670001, z: -1.2210001}
+  m_TimeToStationary: 0.5
