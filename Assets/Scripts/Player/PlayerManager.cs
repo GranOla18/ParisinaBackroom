@@ -32,6 +32,8 @@ public class PlayerManager : MonoBehaviour, IDamage
     public delegate void ChangeBreath(float actualBreath);
     public ChangeBreath onBreathChanged;
 
+    public AudioClip curacion;
+
     #region Singleton
     private void Awake()
     {
@@ -110,6 +112,8 @@ public class PlayerManager : MonoBehaviour, IDamage
         }
         isHealing = false;
         health = maxHealth;
+
+        SFXManager.instance.audioSource.PlayOneShot(curacion);
     }
 
     public IEnumerator Choke()

@@ -11301,7 +11301,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 527392425034335891, guid: 22753485aecdc25488b7f90d8b68b984, type: 3}
       propertyPath: radius
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 527392425034335891, guid: 22753485aecdc25488b7f90d8b68b984, type: 3}
       propertyPath: popUpMgs
