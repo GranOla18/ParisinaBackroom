@@ -59,17 +59,6 @@ public class DiscountCloth : Interactable
     {
         Debug.Log("Escondiendo");
 
-        int sfx = Random.Range(0, 1);
-
-        if(sfx == 0)
-        {
-            SFXManager.instance.audioSource.PlayOneShot(hide01);
-        }
-        else
-        {
-            SFXManager.instance.audioSource.PlayOneShot(hide02);
-        }
-
         CameraBehaviour.instance.GetComponent<Camera>().enabled = false;
         hideCamera.enabled = true;
         isHidden = true;
@@ -80,6 +69,18 @@ public class DiscountCloth : Interactable
     public void ExitCloth()
     {
         Debug.Log("Saliendo");
+
+        int sfx = Random.Range(0, 1);
+
+        if (sfx == 0)
+        {
+            SFXManager.instance.audioSource.PlayOneShot(hide01);
+        }
+        else
+        {
+            SFXManager.instance.audioSource.PlayOneShot(hide02);
+        }
+
         CameraBehaviour.instance.GetComponent<Camera>().enabled = true;
         PlayerManager.instance.GetComponent<Transform>().rotation = hideCamera.transform.rotation;
         hideCamera.enabled = false;

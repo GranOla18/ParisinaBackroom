@@ -24,8 +24,15 @@ public class GhostManager : Interactable
     {
         base.EnterTrigger();
         //PlayerManager.instance.GetComponent<IDamage>().Damage();
-        PlayerManager.instance.Damage();
-        Debug.Log("bye");
-        ghost.Spawn();
+        if (!PlayerManager.instance.isHidden)
+        {
+            PlayerManager.instance.Damage();
+            Debug.Log("bye");
+            ghost.Spawn();
+        }
+        else
+        {
+            Debug.Log("No damage, player is hidden");
+        }
     }
 }
