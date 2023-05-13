@@ -36,6 +36,7 @@ public class PauseMenu : MonoBehaviour
     public void HidePauseMenu()
     {
         pauseMenuCanvas.enabled = false;
+        settingsCanvas.enabled = false;
     }
 
     public void ShowSettings()
