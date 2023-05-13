@@ -1,33 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class GhostManager : Interactable
 {
-    NavMeshAgent agent;
-    public Transform[] walkPoints;
-    public int walkToIdx;
-    public Vector3 target;
+    public float fadeSpeed, fadeAmount;
+    float originalOpacity = 255;
+    Material[] mat;
+    public bool bye;
+    public GhostAI ghost;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        mat = GetComponent<SkinnedMeshRenderer>().materials;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Fade()
     {
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-            GotoNextPoint();
-    }
-
-    public void GotoNextPoint()
-    {
-        walkToIdx = Random.Range(1, 4);
-        agent.SetDestination(walkPoints[walkToIdx].position);
-        Debug.Log("Walking to " + walkToIdx);
+        Color currentColor = mat[0].color;
     }
 
     public override void EnterTrigger()
@@ -35,5 +25,7 @@ public class GhostManager : Interactable
         base.EnterTrigger();
         //PlayerManager.instance.GetComponent<IDamage>().Damage();
         PlayerManager.instance.Damage();
+        Debug.Log("bye");
+        ghost.Spawn();
     }
 }
