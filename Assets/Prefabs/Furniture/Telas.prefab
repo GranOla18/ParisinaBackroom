@@ -919,6 +919,8 @@ MonoBehaviour:
   canDamage: 0
   hideCamera: {fileID: 0}
   isHidden: 0
+  hide01: {fileID: 8300000, guid: 8969fdc50a9ece940888e1854fac893f, type: 3}
+  hide02: {fileID: 8300000, guid: 96c9a74e0ec9f2845955cf155bf15571, type: 3}
 --- !u!136 &1205392592683684996
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -10,6 +10,9 @@ public class DiscountCloth : Interactable
 
     PlayerManager pM;
 
+    public AudioClip hide01;
+    public AudioClip hide02;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +58,18 @@ public class DiscountCloth : Interactable
     public void Hide()
     {
         Debug.Log("Escondiendo");
+
+        int sfx = Random.Range(0, 1);
+
+        if(sfx == 0)
+        {
+            SFXManager.instance.audioSource.PlayOneShot(hide01);
+        }
+        else
+        {
+            SFXManager.instance.audioSource.PlayOneShot(hide02);
+        }
+
         CameraBehaviour.instance.GetComponent<Camera>().enabled = false;
         hideCamera.enabled = true;
         isHidden = true;
