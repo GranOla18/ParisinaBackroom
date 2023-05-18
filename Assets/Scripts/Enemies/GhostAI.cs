@@ -18,22 +18,25 @@ public class GhostAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         isWaiting = false;
         //GotoNextPoint();
+        StartCoroutine(RoutinePatroll());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!agent.pathPending && agent.remainingDistance < 0.5f && !sawPlayer && !isWaiting)
-            GotoNextPoint();
+        //if (!agent.pathPending && agent.remainingDistance < 0.5f && !sawPlayer && !isWaiting)
+        //    GotoNextPoint();
+        //if (!agent.pathPending && agent.remainingDistance < 0.5f && !sawPlayer && !isWaiting)
+        //    GotoNextPoint();
         //StartCoroutine(ThinkNextPos());
     }
 
     public void GotoNextPoint()
     {
-        walkToIdx = Random.Range(0, 5);
-        agent.SetDestination(walkPoints[walkToIdx].position);
-        Debug.Log("Walking to " + walkToIdx);
         //StartCoroutine(ThinkNextPos());
+        walkToIdx = Random.Range(0, 4);
+        Debug.Log("Walking to " + walkToIdx);
+        agent.SetDestination(walkPoints[walkToIdx].position);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -71,23 +74,52 @@ public class GhostAI : MonoBehaviour
         yield return new WaitForSeconds(3);
     }
 
-    IEnumerator ThinkNextPos()
+
+    public IEnumerator RoutinePatroll()
     {
         Debug.Log("Waiting");
-        while(agent.pathPending && agent.remainingDistance > 0.5f)
-        {
-            Debug.Log("cola");
-        }
-        isWaiting = true;
-        agent.SetDestination(this.transform.position);
         yield return new WaitForSeconds(3);
+        do
+        {
+            walkToIdx = Random.Range(0, 4);
+
+        } while (agent.destination == walkPoints[walkToIdx].position);
+        Debug.Log("Walking to " + walkToIdx);
+        agent.SetDestination(walkPoints[walkToIdx].position);
+    }
+
+    public IEnumerator RoutineFollowSound(Transform sound)
+    {
+        agent.SetDestination(sound.position);
+
+        Debug.Log("Waiting");
+        yield return new WaitForSeconds(3);
+
+        StartCoroutine(RoutinePatroll());
+    }
+
+
+    IEnumerator ThinkNextPos()
+    {
+        while (!sawPlayer)
+        {
+            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            {
+                Debug.Log("Waiting");
+                isWaiting = true;
+                yield return new WaitForSeconds(3);
+                GotoNextPoint();
+            }
+        }
+        
         isWaiting = false;
-        GotoNextPoint();
+        //GotoNextPoint();
     }
 
     public void FollowSound(Transform sound)
     {
         Debug.LogError("Following sound " + sound.name + " to " + sound.position);
-        agent.SetDestination(sound.transform.position);
+        //agent.SetDestination(sound.transform.position);
+        StartCoroutine(RoutineFollowSound(sound));
     }
 }

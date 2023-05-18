@@ -13,6 +13,7 @@ public class CastSound : MonoBehaviour
             GhostAI ghost = other.GetComponent<GhostAI>();
             Debug.Log("Casted sound to ghost");
             ghost.FollowSound(parentObj);
+            //ghost.StartCoroutine(ghost.RoutinePatroll());
         }
     }
 }

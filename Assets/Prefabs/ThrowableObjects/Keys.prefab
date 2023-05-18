@@ -356,13 +356,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bdfa102b446a21428cf063fbbe2bd73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2.5
+  radius: 3
   popUpMgs: {fileID: 0}
   canDamage: 0
   thowForce: 700
   cast: {fileID: 7892393136982497487}
   hasBeenThrown: 0
-  hasCollide: 0
 --- !u!1 &3513815901513794157
 GameObject:
   m_ObjectHideFlags: 0
