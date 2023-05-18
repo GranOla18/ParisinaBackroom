@@ -80,6 +80,9 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        PopUp(false);  
+        if (!canDamage)
+        {
+            PopUp(false);
+        }
     }
 }

@@ -12,7 +12,7 @@ public class GhostManager : Interactable
 
     private void Start()
     {
-        mat = GetComponent<SkinnedMeshRenderer>().materials;
+        //mat = GetComponent<SkinnedMeshRenderer>().materials;
     }
 
     void Fade()

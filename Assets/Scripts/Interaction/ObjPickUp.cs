@@ -8,6 +8,7 @@ public class ObjPickUp : Interactable
     bool isPickedUp;
     public float thowForce;
     Rigidbody rb;
+    public GameObject cast;
 
     AudioSource audioSource;
 
@@ -27,6 +28,7 @@ public class ObjPickUp : Interactable
         rb.useGravity = false;
         rb.freezeRotation = true;
         rb.isKinematic = true;
+        cast.SetActive(false);
     }
 
     void Throw()
@@ -47,6 +49,7 @@ public class ObjPickUp : Interactable
         rb = this.GetComponent<Rigidbody>();
         hasBeenThrown = false;
         audioSource = GetComponent<AudioSource>();
+        cast.SetActive(false);
     }
 
     // Update is called once per frame
@@ -71,6 +74,14 @@ public class ObjPickUp : Interactable
         if (hasBeenThrown)
         {
             audioSource.Play();
+            StartCoroutine(CastSFX());
         }
+    }
+
+    public IEnumerator CastSFX()
+    {
+        cast.SetActive(true);
+        yield return new WaitForSeconds(2);
+        cast.SetActive(false);
     }
 }
