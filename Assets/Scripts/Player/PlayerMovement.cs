@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         auxSpeed = speed;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {

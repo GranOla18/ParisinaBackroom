@@ -77,11 +77,12 @@ public class GhostAI : MonoBehaviour
     {
         Debug.Log("Waiting");
         yield return new WaitForSeconds(3);
-        do
-        {
-            walkToIdx = Random.Range(0, 4);
+        walkToIdx = Random.Range(0, 4);
+        //do
+        //{
+        //    walkToIdx = Random.Range(0, 4);
 
-        } while (agent.destination == walkPoints[walkToIdx].position);
+        //} while (agent.destination == walkPoints[walkToIdx].position);
         //Debug.Log("Walking to " + walkToIdx);
         agent.SetDestination(walkPoints[walkToIdx].position);
     }

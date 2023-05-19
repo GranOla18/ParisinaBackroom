@@ -9,7 +9,7 @@ public class FlashlightBehaviour : MonoBehaviour
     public float chargeFlash;
     public float flBattery;
     public float flBattPercent;
-    bool canFlash;
+    public bool canFlash;
     bool isCharging;
 
     public bool canChargeNext;
@@ -28,6 +28,12 @@ public class FlashlightBehaviour : MonoBehaviour
 
     [SerializeField]
     private float showFakeWorkerDist;
+
+    [SerializeField]
+    private float stuntGhost;
+
+    [SerializeField]
+    private float timeToFlash;
 
     #region Singleton
     private void Awake()
@@ -112,7 +118,7 @@ public class FlashlightBehaviour : MonoBehaviour
     //    }
     //}
 
-    private void FixedUpdate()
+    void Update()
     {
         flRay.origin = transform.position;
         flRay.direction = transform.forward;
@@ -133,11 +139,12 @@ public class FlashlightBehaviour : MonoBehaviour
             }
         }
 
+        //When pressing G, "charging" the bug flash
         if (Input.GetKey(KeyCode.G))
         {
             chargeFlash += Time.deltaTime;
 
-            if (chargeFlash >= 1 && flBattery >= 40)
+            if (chargeFlash >= timeToFlash && flBattery >= 40)
             {
                 canFlash = true;
             }
@@ -147,6 +154,7 @@ public class FlashlightBehaviour : MonoBehaviour
             }
         }
 
+        //When G is released, checking what has being flashed
         if (Input.GetKeyUp(KeyCode.G))
         {
             chargeFlash = 0;
@@ -168,6 +176,12 @@ public class FlashlightBehaviour : MonoBehaviour
                         //Debug.Log("pene");
                         flHit.collider.GetComponentInChildren<FakeWorkerManager>().ShowFakeMAT();
                     }
+                    else if(flHit.collider.GetComponentInChildren<GhostManager>() && (flHit.distance < stuntGhost))
+                    {
+                        GhostManager ghostMan = flHit.collider.GetComponentInChildren<GhostManager>();
+                        Debug.Log("fading");
+                        ghostMan.StartCoroutine(ghostMan.FadeRoutine());
+                    }
                     else
                     {
                         //Debug.Log("pitito");
@@ -184,7 +198,8 @@ public class FlashlightBehaviour : MonoBehaviour
         //if (Physics.Raycast(flRay, out flHit))
         //{
         //    Debug.Log("Ray hit distance " + flHit.distance);
-        //    coladist = flHit.distance;
+        //    Debug.Log("Ray hit distance " + flHit.rigidbody.name);
+        //    //coladist = flHit.distance;
 
         //    Debug.DrawLine(flRay.origin, flHit.point, Color.blue);
         //}

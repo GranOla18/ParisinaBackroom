@@ -283,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7230547}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.8670664, y: 4.578121, z: -6.103179}
+  m_LocalPosition: {x: 8.36, y: 4.578121, z: -6.103179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7448618615548910717}
@@ -9580,6 +9580,14 @@ PrefabInstance:
       propertyPath: porcent
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2143491434503893846, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
+      propertyPath: stuntGhost
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143491434503893846, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
+      propertyPath: timeToFlash
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5209509313017885639, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -9646,7 +9654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8579317168529550073, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8691597707949512168, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
       propertyPath: maxBreath
