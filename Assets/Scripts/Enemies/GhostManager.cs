@@ -12,16 +12,17 @@ public class GhostManager : Interactable
     public float fadeTime;
     public bool hasFaded;
     public Color currentColor;
+    Color originalColor;
 
     private void Start()
     {
         mat = GetComponent<MeshRenderer>().materials;
+        originalColor = mat[0].color;
     }
 
     public IEnumerator FadeRoutine()
     {
         float a;
-        Color originalColor = mat[0].color;
         ghost.Wait();
         hasFaded = false;
         while (!hasFaded)
@@ -41,9 +42,14 @@ public class GhostManager : Interactable
         }
 
         ghost.Spawn();
+        
+        //Debug.Log("ya fade");
+    }
+
+    public void SetOriginalColor()
+    {
         mat[0].color = originalColor;
         mat[1].color = originalColor;
-        //Debug.Log("ya fade");
     }
 
     public override void EnterTrigger()

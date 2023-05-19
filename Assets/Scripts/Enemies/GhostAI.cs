@@ -11,6 +11,7 @@ public class GhostAI : MonoBehaviour
     public Vector3 target;
     public bool sawPlayer;
     public bool isWaiting;
+    public GhostManager ghostMan;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,7 @@ public class GhostAI : MonoBehaviour
     public void Spawn()
     {
         agent.isStopped = false;
+        ghostMan.SetOriginalColor();
         walkToIdx = Random.Range(1, 4);
         agent.transform.position = walkPoints[walkToIdx].position;
         agent.SetDestination(this.transform.position);
