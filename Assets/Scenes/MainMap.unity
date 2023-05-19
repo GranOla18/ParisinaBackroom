@@ -3261,6 +3261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
+  playerFL: {fileID: 0}
+  workingLight: {fileID: 990554626}
 --- !u!1001 &293465237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6353,16 +6355,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7092660693009387811, guid: 9ffa31e2fe3c8854d822d2dd3b8cc246, type: 3}
+      propertyPath: Priority
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092660693009387811, guid: 9ffa31e2fe3c8854d822d2dd3b8cc246, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7092660693009387811, guid: 9ffa31e2fe3c8854d822d2dd3b8cc246, type: 3}
       propertyPath: MaxDistance
-      value: 0.505
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7092660693009387811, guid: 9ffa31e2fe3c8854d822d2dd3b8cc246, type: 3}
       propertyPath: MinDistance
-      value: 0.1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7892393136982497487, guid: 9ffa31e2fe3c8854d822d2dd3b8cc246, type: 3}
       propertyPath: m_IsActive
@@ -10562,7 +10568,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
