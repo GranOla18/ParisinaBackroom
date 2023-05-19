@@ -60,11 +60,13 @@ public class GhostAI : MonoBehaviour
 
     public void Spawn()
     {
-        agent.isStopped = false;
+        StopAllCoroutines();
+        agent.isStopped = true;
         ghostMan.SetOriginalColor();
         walkToIdx = Random.Range(1, 4);
         agent.transform.position = walkPoints[walkToIdx].position;
-        agent.SetDestination(this.transform.position);
+        //agent.SetDestination(this.transform.position);
+        StartCoroutine(RoutinePatroll());
         Debug.Log("boo");
     }
 
@@ -77,7 +79,9 @@ public class GhostAI : MonoBehaviour
 
     public IEnumerator RoutinePatroll()
     {
-        Debug.Log("Waiting");
+        agent.isStopped = true;
+
+        //Debug.Log("Waiting");
         yield return new WaitForSeconds(3);
         walkToIdx = Random.Range(0, 4);
         //do
@@ -86,7 +90,10 @@ public class GhostAI : MonoBehaviour
 
         //} while (agent.destination == walkPoints[walkToIdx].position);
         //Debug.Log("Walking to " + walkToIdx);
+        //Debug.Log("Patroll");
         agent.SetDestination(walkPoints[walkToIdx].position);
+        agent.isStopped = false;
+
     }
 
     public IEnumerator RoutineFollowSound(Transform sound)
@@ -102,7 +109,7 @@ public class GhostAI : MonoBehaviour
     public void FollowSound(Transform sound)
     {
         //Debug.LogError("Following sound " + sound.name + " to " + sound.position);
-        //agent.SetDestination(sound.transform.position);
-        StartCoroutine(RoutineFollowSound(sound));
+        agent.SetDestination(sound.transform.position);
+        StartCoroutine(RoutinePatroll());
     }
 }

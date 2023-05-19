@@ -20,7 +20,7 @@ public class WalkPointManager : MonoBehaviour
     {
         if (other.GetComponent<GhostAI>())
         {
-            Debug.Log("start coroutine");
+            //Debug.Log("start coroutine");
 
             GhostAI ghost = other.GetComponent<GhostAI>();
             ghost.StartCoroutine(ghost.RoutinePatroll());
