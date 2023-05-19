@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815affc8bb5533b4f9abbeba7d9738a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
   walkPoints:
   - {fileID: 1458856976}
   - {fileID: 59454579}
@@ -21424,6 +21425,9 @@ MonoBehaviour:
   fadeAmount: 0
   bye: 0
   ghost: {fileID: 1815847452}
+  fadeTime: 0
+  hasFaded: 0
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!136 &1808835899
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21713,6 +21717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815affc8bb5533b4f9abbeba7d9738a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
   walkPoints:
   - {fileID: 1458856976}
   - {fileID: 59454579}
@@ -26078,6 +26083,9 @@ MonoBehaviour:
   fadeAmount: 0
   bye: 0
   ghost: {fileID: 7230549}
+  fadeTime: 0
+  hasFaded: 0
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &7788165791221270217
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26089,8 +26097,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 19, y: 25, z: 14.78}
-  m_Center: {x: 1.34, y: 7, z: -8.23}
+  m_Size: {x: 22, y: 30, z: 14.78}
+  m_Center: {x: 1.34, y: 7.6, z: -8.23}
 --- !u!136 &7788165791221270218
 CapsuleCollider:
   m_ObjectHideFlags: 0

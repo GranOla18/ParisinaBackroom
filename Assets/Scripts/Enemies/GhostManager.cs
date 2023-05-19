@@ -9,15 +9,41 @@ public class GhostManager : Interactable
     Material[] mat;
     public bool bye;
     public GhostAI ghost;
+    public float fadeTime;
+    public bool hasFaded;
+    public Color currentColor;
 
     private void Start()
     {
-        //mat = GetComponent<SkinnedMeshRenderer>().materials;
+        mat = GetComponent<MeshRenderer>().materials;
     }
 
-    void Fade()
+    public IEnumerator FadeRoutine()
     {
-        Color currentColor = mat[0].color;
+        float a;
+        Color originalColor = mat[0].color;
+        ghost.Wait();
+        hasFaded = false;
+        while (!hasFaded)
+        {
+            currentColor = mat[0].color;
+            a = Mathf.Lerp(currentColor.a, 0, 3 * Time.deltaTime);
+
+            Color smoothColor = new Color(currentColor.r, currentColor.g, currentColor.b, a);
+            //currentColor.a -= 0.2f;
+            mat[0].color = smoothColor;
+            mat[1].color = smoothColor;
+            if (a <= 0.01)
+            {
+                hasFaded = true;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+
+        ghost.Spawn();
+        mat[0].color = originalColor;
+        mat[1].color = originalColor;
+        //Debug.Log("ya fade");
     }
 
     public override void EnterTrigger()
@@ -26,9 +52,10 @@ public class GhostManager : Interactable
         //PlayerManager.instance.GetComponent<IDamage>().Damage();
         if (!PlayerManager.instance.isHidden)
         {
+            StopAllCoroutines();
             PlayerManager.instance.Damage();
+            StartCoroutine(FadeRoutine());
             Debug.Log("bye");
-            ghost.Spawn();
         }
         else
         {

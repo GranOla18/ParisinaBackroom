@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class GhostAI : MonoBehaviour
 {
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     public Transform[] walkPoints;
     public int walkToIdx;
     public Vector3 target;
@@ -24,11 +24,7 @@ public class GhostAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (!agent.pathPending && agent.remainingDistance < 0.5f && !sawPlayer && !isWaiting)
-        //    GotoNextPoint();
-        //if (!agent.pathPending && agent.remainingDistance < 0.5f && !sawPlayer && !isWaiting)
-        //    GotoNextPoint();
-        //StartCoroutine(ThinkNextPos());
+
     }
 
     public void GotoNextPoint()
@@ -43,10 +39,11 @@ public class GhostAI : MonoBehaviour
     {
         if (other.GetComponent<PlayerManager>())
         {
+            StopAllCoroutines();
             sawPlayer = true;
             //agent.updatePosition
             agent.SetDestination(other.transform.position);
-            //Debug.Log("Siguiendo al jugador");
+            Debug.Log("Siguiendo al jugador");
         }
     }
 
@@ -62,16 +59,17 @@ public class GhostAI : MonoBehaviour
 
     public void Spawn()
     {
-        //StartCoroutine(cola());
+        agent.isStopped = false;
         walkToIdx = Random.Range(1, 4);
         agent.transform.position = walkPoints[walkToIdx].position;
         agent.SetDestination(this.transform.position);
         Debug.Log("boo");
     }
 
-    IEnumerator cola()
+    public void Wait()
     {
-        yield return new WaitForSeconds(3);
+        //agent.SetDestination(this.transform.position);
+        agent.isStopped = true;
     }
 
 
@@ -84,7 +82,7 @@ public class GhostAI : MonoBehaviour
             walkToIdx = Random.Range(0, 4);
 
         } while (agent.destination == walkPoints[walkToIdx].position);
-        Debug.Log("Walking to " + walkToIdx);
+        //Debug.Log("Walking to " + walkToIdx);
         agent.SetDestination(walkPoints[walkToIdx].position);
     }
 
@@ -92,33 +90,15 @@ public class GhostAI : MonoBehaviour
     {
         agent.SetDestination(sound.position);
 
-        Debug.Log("Waiting");
+        //Debug.Log("Waiting");
         yield return new WaitForSeconds(3);
 
         StartCoroutine(RoutinePatroll());
     }
 
-
-    IEnumerator ThinkNextPos()
-    {
-        while (!sawPlayer)
-        {
-            if (!agent.pathPending && agent.remainingDistance < 0.5f)
-            {
-                Debug.Log("Waiting");
-                isWaiting = true;
-                yield return new WaitForSeconds(3);
-                GotoNextPoint();
-            }
-        }
-        
-        isWaiting = false;
-        //GotoNextPoint();
-    }
-
     public void FollowSound(Transform sound)
     {
-        Debug.LogError("Following sound " + sound.name + " to " + sound.position);
+        //Debug.LogError("Following sound " + sound.name + " to " + sound.position);
         //agent.SetDestination(sound.transform.position);
         StartCoroutine(RoutineFollowSound(sound));
     }
