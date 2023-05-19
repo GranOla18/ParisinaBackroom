@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public GameManager playerFL;
+    public Light workingLight;
+
     #region Singleton
     private void Awake()
     {
@@ -45,8 +48,7 @@ public class GameManager : MonoBehaviour
             {
                 ResumeGame();
             }
-        }
-        
+        }        
     }
 
     public void PauseGame()
@@ -68,5 +70,18 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    [ContextMenu("Start")]
+    public void StartGame()
+    {
+        RenderSettings.fog = true;
+        workingLight.enabled = false;
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        //Debug.LogError("moricion");
     }
 }

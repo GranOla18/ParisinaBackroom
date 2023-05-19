@@ -41,6 +41,7 @@ public class GhostAI : MonoBehaviour
         if (other.GetComponent<PlayerManager>())
         {
             StopAllCoroutines();
+            agent.isStopped = false;
             sawPlayer = true;
             //agent.updatePosition
             agent.SetDestination(other.transform.position);

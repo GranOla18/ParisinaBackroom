@@ -69,6 +69,7 @@ public class PlayerManager : MonoBehaviour, IDamage
         {
             //TODO: GAME OVER
             Debug.Log("Moricion");
+            GameManager.instance.GameOver();
         }
         health -= 1;
 
