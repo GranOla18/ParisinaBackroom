@@ -701,6 +701,63 @@ Transform:
   m_Father: {fileID: 124305092}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &31311581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2107712849057588794, guid: 750cbf690afdea143ae41e8e2aade7aa, type: 3}
+  m_PrefabInstance: {fileID: 1588612678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &31311585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31311581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.20238107, b: 0, a: 1}
+  outlineWidth: 8
+  precomputeOutline: 1
+  bakeKeys:
+  - {fileID: -1226817584057097758, guid: d96b3fb33a760bb43ac7dfa291420997, type: 3}
+  bakeValues:
+  - data:
+    - {x: 0.4997358, y: 0, z: -0.8661779}
+    - {x: 0.4997358, y: 0, z: -0.8661779}
+    - {x: 0.9658468, y: 0, z: -0.2591139}
+    - {x: 0.9658468, y: 0, z: -0.2591139}
+    - {x: 0.9658468, y: 0, z: -0.2591139}
+    - {x: 0.9658468, y: 0, z: -0.2591139}
+    - {x: 0.86617804, y: 0, z: 0.49973544}
+    - {x: 0.86617804, y: 0, z: 0.49973544}
+    - {x: 0.86617804, y: 0, z: 0.49973544}
+    - {x: 0.86617804, y: 0, z: 0.49973544}
+    - {x: 0.2591139, y: 0, z: 0.9658468}
+    - {x: 0.2591139, y: 0, z: 0.9658468}
+    - {x: 0.2591139, y: 0, z: 0.9658468}
+    - {x: 0.2591139, y: 0, z: 0.9658468}
+    - {x: -0.4997356, y: 0, z: 0.86617804}
+    - {x: -0.4997356, y: 0, z: 0.86617804}
+    - {x: -0.4997356, y: 0, z: 0.86617804}
+    - {x: -0.4997356, y: 0, z: 0.86617804}
+    - {x: -0.9658468, y: 0, z: 0.25911373}
+    - {x: -0.9658468, y: 0, z: 0.25911373}
+    - {x: -0.9658468, y: 0, z: 0.25911373}
+    - {x: -0.9658468, y: 0, z: 0.25911373}
+    - {x: -0.866178, y: 0, z: -0.49973568}
+    - {x: -0.866178, y: 0, z: -0.49973568}
+    - {x: -0.866178, y: 0, z: -0.49973568}
+    - {x: -0.866178, y: 0, z: -0.49973568}
+    - {x: -0.25911397, y: 0, z: -0.9658468}
+    - {x: -0.25911397, y: 0, z: -0.9658468}
+    - {x: -0.25911397, y: 0, z: -0.9658468}
+    - {x: -0.25911397, y: 0, z: -0.9658468}
+    - {x: 0.4997358, y: 0, z: -0.8661779}
+    - {x: 0.4997358, y: 0, z: -0.8661779}
 --- !u!1 &59454578
 GameObject:
   m_ObjectHideFlags: 0
@@ -15180,6 +15237,63 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1323824507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8238597517744380508, guid: 750cbf690afdea143ae41e8e2aade7aa, type: 3}
+  m_PrefabInstance: {fileID: 1588612678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1323824509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323824507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.20238107, b: 0, a: 1}
+  outlineWidth: 8
+  precomputeOutline: 1
+  bakeKeys:
+  - {fileID: -1226817584057097758, guid: d96b3fb33a760bb43ac7dfa291420997, type: 3}
+  bakeValues:
+  - data:
+    - {x: 0.4997358, y: 0, z: -0.8661779}
+    - {x: 0.4997358, y: 0, z: -0.8661779}
+    - {x: 0.9658468, y: 0, z: -0.2591139}
+    - {x: 0.9658468, y: 0, z: -0.2591139}
+    - {x: 0.9658468, y: 0, z: -0.2591139}
+    - {x: 0.9658468, y: 0, z: -0.2591139}
+    - {x: 0.86617804, y: 0, z: 0.49973544}
+    - {x: 0.86617804, y: 0, z: 0.49973544}
+    - {x: 0.86617804, y: 0, z: 0.49973544}
+    - {x: 0.86617804, y: 0, z: 0.49973544}
+    - {x: 0.2591139, y: 0, z: 0.9658468}
+    - {x: 0.2591139, y: 0, z: 0.9658468}
+    - {x: 0.2591139, y: 0, z: 0.9658468}
+    - {x: 0.2591139, y: 0, z: 0.9658468}
+    - {x: -0.4997356, y: 0, z: 0.86617804}
+    - {x: -0.4997356, y: 0, z: 0.86617804}
+    - {x: -0.4997356, y: 0, z: 0.86617804}
+    - {x: -0.4997356, y: 0, z: 0.86617804}
+    - {x: -0.9658468, y: 0, z: 0.25911373}
+    - {x: -0.9658468, y: 0, z: 0.25911373}
+    - {x: -0.9658468, y: 0, z: 0.25911373}
+    - {x: -0.9658468, y: 0, z: 0.25911373}
+    - {x: -0.866178, y: 0, z: -0.49973568}
+    - {x: -0.866178, y: 0, z: -0.49973568}
+    - {x: -0.866178, y: 0, z: -0.49973568}
+    - {x: -0.866178, y: 0, z: -0.49973568}
+    - {x: -0.25911397, y: 0, z: -0.9658468}
+    - {x: -0.25911397, y: 0, z: -0.9658468}
+    - {x: -0.25911397, y: 0, z: -0.9658468}
+    - {x: -0.25911397, y: 0, z: -0.9658468}
+    - {x: 0.4997358, y: 0, z: -0.8661779}
+    - {x: 0.4997358, y: 0, z: -0.8661779}
 --- !u!1 &1324150925
 GameObject:
   m_ObjectHideFlags: 0
