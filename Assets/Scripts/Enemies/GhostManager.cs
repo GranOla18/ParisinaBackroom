@@ -14,6 +14,8 @@ public class GhostManager : Interactable
     public Color currentColor;
     Color originalColor;
 
+    bool isFading;
+
     private void Start()
     {
         mat = GetComponent<MeshRenderer>().materials;
@@ -42,6 +44,7 @@ public class GhostManager : Interactable
         }
 
         ghost.Spawn();
+        isFading = false;
         
         //Debug.Log("ya fade");
     }
@@ -56,9 +59,10 @@ public class GhostManager : Interactable
     {
         base.EnterTrigger();
         //PlayerManager.instance.GetComponent<IDamage>().Damage();
-        if (!PlayerManager.instance.isHidden)
+        if (!PlayerManager.instance.isHidden && !isFading)
         {
             StopAllCoroutines();
+            isFading = true;
             PlayerManager.instance.Damage();
             StartCoroutine(FadeRoutine());
             Debug.Log("bye");
