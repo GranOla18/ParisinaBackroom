@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
     public delegate void GameOverDel();
     public GameOverDel onGameOver;
 
+    public GameObject ghost01;
+    public GameObject ghost02;
+    //public GhostAI ghost01;
+    //public GhostAI ghost02;
 
     #region Singleton
     private void Awake()
@@ -98,6 +102,9 @@ public class GameManager : MonoBehaviour
     {
         RenderSettings.fog = true;
         workingLight.enabled = false;
+
+        ghost01.SetActive(true);
+        ghost02.SetActive(true);
     }
 
     public void GameOver()

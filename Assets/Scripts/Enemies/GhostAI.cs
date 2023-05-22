@@ -31,6 +31,13 @@ public class GhostAI : MonoBehaviour
     private void OnEnable()
     {
         GameManager.instance.onGameOver += Wait;
+        agent = GetComponent<NavMeshAgent>();
+        isWaiting = false;
+        //GotoNextPoint();
+        //StartCoroutine(RoutinePatroll());
+        //Spawn();
+        walkToIdx = Random.Range(1, 4);
+        agent.transform.position = walkPoints[walkToIdx].position;
     }
 
     private void OnDisable()

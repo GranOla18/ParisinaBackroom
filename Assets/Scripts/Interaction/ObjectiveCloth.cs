@@ -49,7 +49,7 @@ public class ObjectiveCloth : Interactable
 
     public void StartGameTrigger()
     {
-        Debug.Log("cola");
+        //Debug.Log("cola");
         GameManager.instance.StartGame();
         outlineScriptHead.enabled = false;
         outlineScriptBody.enabled = false;
