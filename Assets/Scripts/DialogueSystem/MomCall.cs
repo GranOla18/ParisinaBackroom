@@ -9,6 +9,8 @@ public class MomCall : MonoBehaviour
 
     public DialogueTrigger dialogueTrigger;
 
+    public Outline workEntranceOutline;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class MomCall : MonoBehaviour
     private void OnDisable()
     {
         DialogueSystem.instance.onFinishDialogue -= MomEndCall;
+        workEntranceOutline.enabled = true;
     }
 
     private void OnTriggerEnter(Collider other)

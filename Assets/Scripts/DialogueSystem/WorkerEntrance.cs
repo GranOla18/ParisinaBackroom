@@ -22,15 +22,22 @@ public class WorkerEntrance : MonoBehaviour
     {
         dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
         dialogueTrigger.onPoseChange += CheckSentence;
+        DialogueSystem.instance.onFinishDialogue += StopOutline;
     }
 
     private void OnDisable()
     {
         dialogueTrigger.onPoseChange -= CheckSentence;
+        DialogueSystem.instance.onFinishDialogue -= StopOutline;
     }
 
     public void GiveFolleto()
     {
         folletoGameObject.SetActive(true);
+    }
+
+    public void StopOutline()
+    {
+        this.GetComponent<Outline>().enabled = false;
     }
 }

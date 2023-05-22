@@ -11,6 +11,7 @@ public class WorkerPoses : MonoBehaviour
     {
         dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
         dialogueTrigger.onPoseChange += ChangeWorkerPose;
+        //DialogueSystem.instance.onFinishDialogue += ReturnIdle;
     }
 
     public void ChangeWorkerPose()
@@ -18,8 +19,14 @@ public class WorkerPoses : MonoBehaviour
         dialogueTrigger.ChangePose();
     }
 
+    //public void ReturnIdle()
+    //{
+    //    dialogueTrigger.animator.SetTrigger("Idle");
+    //}
+
     private void OnDisable()
     {
         dialogueTrigger.onPoseChange -= ChangeWorkerPose;
+        //DialogueSystem.instance.onFinishDialogue -= ReturnIdle;
     }
 }
