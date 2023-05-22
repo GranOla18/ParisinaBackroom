@@ -13,7 +13,11 @@ public class GuardPoses : MonoBehaviour
     [ContextMenu("Next Sentence")]
     public void ChangeGuardPose()
     {
-        if (DialogueSystem.instance.sentences.Count == 5)
+        if(DialogueSystem.instance.sentences.Count == 7)
+        {
+            StopOutline();
+        }
+        else if (DialogueSystem.instance.sentences.Count == 5)
         {
             animator.SetTrigger("Give");
         }
@@ -33,16 +37,25 @@ public class GuardPoses : MonoBehaviour
         dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
         dialogueTrigger.onPoseChange += ChangeGuardPose;
         animator = this.gameObject.GetComponent<Animator>();
+        DialogueSystem.instance.onStartDialogue += StopOutline;
+        //DialogueSystem.instance.onFinishDialogue += StopOutline;
     }
 
     private void OnDisable()
     {
         dialogueTrigger.onPoseChange -= ChangeGuardPose;
+        DialogueSystem.instance.onStartDialogue -= StopOutline;
+        //DialogueSystem.instance.onFinishDialogue -= StopOutline;
     }
 
     public void GiveFL()
     {
         flPlayer.SetActive(true);
         flGuard.SetActive(false);
+    }
+
+    public void StopOutline()
+    {
+        this.GetComponent<Outline>().enabled = false;
     }
 }

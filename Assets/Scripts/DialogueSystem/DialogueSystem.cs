@@ -16,6 +16,9 @@ public class DialogueSystem : MonoBehaviour
     public delegate void FinishDialogue();
     public FinishDialogue onFinishDialogue;
 
+    public delegate void StartConversation();
+    public StartConversation onStartDialogue;
+
     #region Singleton
     private void Awake()
     {
@@ -40,6 +43,11 @@ public class DialogueSystem : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         //Debug.Log("Starting conversation with " + dialogue.name);
+
+        if (onStartDialogue != null)
+        {
+            onStartDialogue.Invoke();
+        }
 
         dialogBox.enabled = true;
 

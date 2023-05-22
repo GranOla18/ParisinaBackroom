@@ -12,7 +12,11 @@ public class WorkerEntrance : MonoBehaviour
     [ContextMenu("Next Sentence")]
     public void CheckSentence()
     {
-        if (DialogueSystem.instance.sentences.Count == 2)
+        if(DialogueSystem.instance.sentences.Count == 3)
+        {
+            StopOutline();
+        }
+        else if (DialogueSystem.instance.sentences.Count == 2)
         {
             GiveFolleto();
         }
@@ -22,13 +26,15 @@ public class WorkerEntrance : MonoBehaviour
     {
         dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
         dialogueTrigger.onPoseChange += CheckSentence;
-        DialogueSystem.instance.onFinishDialogue += StopOutline;
+        //DialogueSystem.instance.onFinishDialogue += StopOutline;
+        DialogueSystem.instance.onStartDialogue += StopOutline;
     }
 
     private void OnDisable()
     {
         dialogueTrigger.onPoseChange -= CheckSentence;
-        DialogueSystem.instance.onFinishDialogue -= StopOutline;
+        //DialogueSystem.instance.onFinishDialogue -= StopOutline;
+        DialogueSystem.instance.onStartDialogue -= StopOutline;
     }
 
     public void GiveFolleto()
