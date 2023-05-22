@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class GameManager : MonoBehaviour
     public bool playerHasFL;
 
     public ObjectiveCloth objCloth;
+
+    public GameOverUI gameOverUI;
+
+    public delegate void GameOverDel();
+    public GameOverDel onGameOver;
+
 
     #region Singleton
     private void Awake()
@@ -71,6 +78,16 @@ public class GameManager : MonoBehaviour
         isPaused = false;
     }
 
+    public void ReturnMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
@@ -85,8 +102,14 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Time.timeScale = 0;
-        //Debug.LogError("moricion");
+        if(onGameOver != null)
+        {
+            onGameOver.Invoke();
+        }
+        //Time.timeScale = 0;
+        PlayerMovement.instance.enabled = false;
+        gameOverUI.StartCoroutine(gameOverUI.FadeToBlackRoutine());
+        Debug.Log("GAME OVER");
     }
 
     public void PlayerGivenFL()

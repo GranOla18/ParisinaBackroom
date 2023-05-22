@@ -28,6 +28,16 @@ public class GhostAI : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        GameManager.instance.onGameOver += Wait;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.instance.onGameOver -= Wait;
+    }
+
     public void GotoNextPoint()
     {
         //StartCoroutine(ThinkNextPos());

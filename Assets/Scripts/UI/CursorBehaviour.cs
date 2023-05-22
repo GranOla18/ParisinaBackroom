@@ -34,6 +34,12 @@ public class CursorBehaviour : MonoBehaviour
         else if(scene.buildIndex == 1)
         {
             Cursor.lockState = CursorLockMode.Locked;
+            GameManager.instance.onGameOver += ShowCursor;
         }
+    }
+
+    public void ShowCursor()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
     }
 }
