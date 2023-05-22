@@ -536,6 +536,37 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &18059047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2806852702058930879, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
+  m_PrefabInstance: {fileID: 1748477173}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &18059049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
+  m_PrefabInstance: {fileID: 1748477173}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18059047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &18059053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18059047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553df7d1438818442afcf72c10480cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasGivenTicket: 0
+  dialogueTriggerSinTicket: {fileID: 18059049}
+  dialogueTriggerConTicket: {fileID: 206045766}
 --- !u!1 &20840043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,6 +1883,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 642466903069573207, guid: 750cbf690afdea143ae41e8e2aade7aa, type: 3}
   m_PrefabInstance: {fileID: 168549543}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &181668443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3471972836966265051, guid: 72a10efe44b579143bb352b4f8339cc1, type: 3}
+  m_PrefabInstance: {fileID: 1444288484}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &181668445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181668443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca5d756cfb9e9c48a590a779b921221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueTriggerConTicket: {fileID: 940114007}
+  dialogueTriggerSinTicket: {fileID: 974530610}
+--- !u!65 &181668446
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181668443}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 3, z: 3}
+  m_Center: {x: 0, y: 0, z: -2.5}
 --- !u!1001 &186354293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2150,6 +2213,89 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188751018}
   m_CullTransparentMesh: 1
+--- !u!1 &206045763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 206045764}
+  - component: {fileID: 206045767}
+  - component: {fileID: 206045766}
+  - component: {fileID: 206045765}
+  m_Layer: 0
+  m_Name: DialogueWithTicket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &206045764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206045763}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1433389074}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &206045765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206045763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e936b2b35e3c564daea69a7b9780e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueTrigger: {fileID: 0}
+--- !u!114 &206045766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206045763}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  popUpMgs: {fileID: 1501047984}
+  canDamage: 0
+  animator: {fileID: 0}
+  dialogue:
+    name: Empleado de Tickets
+    sentences:
+    - Ya tienes un ticket, ahora ve a CAJA a pagar.
+    poses: 02000000
+  isTalking: 0
+  distanceObj: 0
+  talkPos: {x: 0, y: 0, z: 0}
+--- !u!65 &206045767
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206045763}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2.5, z: 1.5}
+  m_Center: {x: 0, y: 2, z: 1}
 --- !u!1001 &206998257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8526,6 +8672,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1501047984}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: talkPos.x
       value: 2.2
       objectReference: {fileID: 0}
@@ -11041,6 +11191,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7199669913110346078, guid: d4fabaaecc0426b479e5b4837de91ba2, type: 3}
   m_PrefabInstance: {fileID: 926132159}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &940114007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
+  m_PrefabInstance: {fileID: 714892880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &945186082
 GameObject:
   m_ObjectHideFlags: 0
@@ -11134,6 +11295,90 @@ Transform:
   m_Father: {fileID: 697482691}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &974530607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 974530608}
+  - component: {fileID: 974530611}
+  - component: {fileID: 974530610}
+  - component: {fileID: 974530609}
+  m_Layer: 0
+  m_Name: NoTickerDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &974530608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974530607}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 258148551}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &974530609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974530607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e936b2b35e3c564daea69a7b9780e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueTrigger: {fileID: 0}
+--- !u!114 &974530610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974530607}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  popUpMgs: {fileID: 1501047984}
+  canDamage: 0
+  animator: {fileID: 0}
+  dialogue:
+    name: Empleado de Tickets
+    sentences:
+    - Buenas noches chamaco,
+    - Necesitas tener un ticket de pedido, busca a un EMPLEADO para que te de uno.
+    poses: 0000000003000000
+  isTalking: 0
+  distanceObj: 0
+  talkPos: {x: 2.2, y: 0, z: 0}
+--- !u!65 &974530611
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974530607}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2.5, z: 3.5}
+  m_Center: {x: 0, y: 2, z: 2}
 --- !u!1 &990554624
 GameObject:
   m_ObjectHideFlags: 0
@@ -16208,7 +16453,7 @@ MonoBehaviour:
     name: Yo
     sentences:
     - "\xA1Esta es la tela que estoy buscando!"
-    - Ahora debo encontrar a un trabajador
+    - Ahora debo encontrar a un TRABAJADOR
     poses: 
   isTalking: 0
   distanceObj: 0
@@ -20190,6 +20435,10 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2107712849057588794, guid: 750cbf690afdea143ae41e8e2aade7aa, type: 3}
+      propertyPath: m_Name
+      value: TelaObjCuerpo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2107712849057588794, guid: 750cbf690afdea143ae41e8e2aade7aa, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -20248,6 +20497,10 @@ PrefabInstance:
     - target: {fileID: 7440465726445266081, guid: 750cbf690afdea143ae41e8e2aade7aa, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8238597517744380508, guid: 750cbf690afdea143ae41e8e2aade7aa, type: 3}
+      propertyPath: m_Name
+      value: TelaObjCabeza
       objectReference: {fileID: 0}
     - target: {fileID: 8238597517744380508, guid: 750cbf690afdea143ae41e8e2aade7aa, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -22103,7 +22356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.poses.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.poses.Array.data[0]
@@ -22123,7 +22376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.poses.Array.data[4]
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
@@ -22135,16 +22392,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: "Buena elecci\xF3n, acompa\xF1eme a las mesas de trabajo para que genere
-        el ticket de tu tela."
+      value: "Buena elecci\xF3n, aqu\xED tienes el ticket de tu tela."
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: Toma, este es tu ticket de pedido
+      value: Ya tienes un ticket, ahora ve a CAJA a pagar.
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[4]
-      value: '*Recibe Ticket de pedido*'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3294419436431292421, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: m_RootOrder
@@ -22152,7 +22408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294419436431292421, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.52
+      value: 2.29
       objectReference: {fileID: 0}
     - target: {fileID: 3294419436431292421, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22160,7 +22416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294419436431292421, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.74
+      value: 6.43
       objectReference: {fileID: 0}
     - target: {fileID: 3294419436431292421, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: m_LocalRotation.w

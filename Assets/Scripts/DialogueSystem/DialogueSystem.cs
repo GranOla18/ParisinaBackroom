@@ -80,7 +80,7 @@ public class DialogueSystem : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence (string sentence)
+    public IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
@@ -91,7 +91,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         if (onFinishDialogue != null)
         {
