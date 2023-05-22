@@ -35,6 +35,8 @@ public class PlayerManager : MonoBehaviour, IDamage
     public AudioClip curacion;
 
     public bool hasTicket;
+    public bool hasPaid;
+    public bool hasCloth;
 
     #region Singleton
     private void Awake()

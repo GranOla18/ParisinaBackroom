@@ -45,7 +45,7 @@ public class DialogueTrigger : Interactable
         if (!PlayerManager.instance.isTalking)
         {
             TriggerDialogue();
-            Debug.Log("Hablando");
+            //Debug.Log("Hablando");
         }
         else
         {

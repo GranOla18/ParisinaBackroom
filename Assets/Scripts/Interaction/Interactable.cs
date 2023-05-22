@@ -35,7 +35,7 @@ public class Interactable : MonoBehaviour
 
     public virtual void Interact()
     {
-        Debug.Log("Interacting with " + this.name);
+        //Debug.Log("Interacting with " + this.name);
         PopUp(false);
         //PopUp();
     }

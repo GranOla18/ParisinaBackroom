@@ -96,11 +96,11 @@ public class DialogueSystem : MonoBehaviour
         if (onFinishDialogue != null)
         {
             onFinishDialogue.Invoke();
-            Debug.Log("Termine dialogo");
+            //Debug.Log("Termine dialogo");
         }
 
         dialogBox.enabled = false;
-        Debug.Log("End conversation");
+        //Debug.Log("End conversation");
         PlayerManager.instance.isTalking = false;
         CameraBehaviour.instance.LockOnConversation();
         PlayerMovement.instance.ChangeSpeed();

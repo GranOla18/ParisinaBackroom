@@ -3696,6 +3696,7 @@ MonoBehaviour:
   gameOverUI: {fileID: 518331008}
   ghost01: {fileID: 921757702}
   ghost02: {fileID: 7230547}
+  hasWon: 0
 --- !u!1001 &293465237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8648,6 +8649,55 @@ Transform:
   m_Father: {fileID: 531787444}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &713467564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2806852702058930879, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
+  m_PrefabInstance: {fileID: 751675324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &713467566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
+  m_PrefabInstance: {fileID: 751675324}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713467564}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &713467570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713467564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b161b7b372044b74f9862ddbd9643e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dT: {fileID: 0}
+  smooth: 1
+  dTEntrega: {fileID: 1918396507}
+  hasTurnAround: 0
+--- !u!114 &713467571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713467564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66636a10a59ef9043be5c60fcfb88c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dTEntrega: {fileID: 1918396507}
+  dTConTicket: {fileID: 713467566}
+  dTFinish: {fileID: 1897906072}
+  tWorker: {fileID: 713467570}
+  handingCloth: {fileID: 1918396508}
 --- !u!1001 &714892880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8685,7 +8735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.poses.Array.size
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.poses.Array.data[0]
@@ -8709,7 +8759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.poses.Array.data[5]
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.poses.Array.data[6]
@@ -8717,7 +8767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
@@ -8730,19 +8780,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: '*Entrega Ticket de pedido*'
+      value: Listo.
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: '*Entrega Dinero*'
+      value: "Oye chamaco, recuerda solicitar tu pedido un Empleado Real, ten cuidado
+        con quien interact\xFAas."
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[4]
-      value: '*Recibe Ticket de compra*'
+      value: "Oye chamaco, recuerda solicitar tu pedido un Empleado Real, ten cuidado
+        con quien interact\xFAas."
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[5]
-      value: Listo.
+      value: "Oye chamaco, recuerda solicitar tu pedido un Empleado Real, ten cuidado
+        con quien interact\xFAas."
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[6]
@@ -8831,12 +8884,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1501047984}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.name
       value: Cortador de Tela
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.poses.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.poses.Array.data[0]
@@ -8844,7 +8901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.poses.Array.data[1]
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.poses.Array.data[2]
@@ -8860,27 +8917,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: "Buenas noches, \xBFnecesita algo?"
+      value: "Buenas noches, \xBFme puede dar su ticket de pago?"
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: "*Entrega Ticket de compra\r*"
-      objectReference: {fileID: 0}
-    - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
-      propertyPath: dialogue.sentences.Array.data[2]
       value: "De acuerdo, en unos segundos estar\xE1 lista"
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: Gracias por su preferencia.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: Todo listo. Hago entrega de la tela requerida.
+      value: Gracias por su preferencia.
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[4]
-      value: '*Recibe Tela cortada*'
+      value: Gracias por su preferencia.
       objectReference: {fileID: 0}
     - target: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: dialogue.sentences.Array.data[5]
@@ -8904,7 +8961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294419436431292421, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3294419436431292421, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8912,7 +8969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294419436431292421, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3294419436431292421, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: m_LocalRotation.z
@@ -8924,7 +8981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294419436431292421, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3294419436431292421, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -9191,7 +9248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &765154871
 Transform:
   m_ObjectHideFlags: 0
@@ -10497,6 +10554,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8691597707949512168, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
+      propertyPath: hasPaid
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691597707949512168, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
+      propertyPath: hasTicket
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691597707949512168, guid: cdc20ed6ac817af4aae6a3bdb6338141, type: 3}
       propertyPath: maxBreath
       value: 6
       objectReference: {fileID: 0}
@@ -11191,17 +11256,35 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7199669913110346078, guid: d4fabaaecc0426b479e5b4837de91ba2, type: 3}
   m_PrefabInstance: {fileID: 926132159}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &940114005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2806852702058930879, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
+  m_PrefabInstance: {fileID: 714892880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &940114007 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3040660342727593582, guid: ac21e94cffdfb5a4b96e332aed5210e9, type: 3}
   m_PrefabInstance: {fileID: 714892880}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 940114005}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &940114011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940114005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97200b25ef2064540842255486850f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dT: {fileID: 0}
 --- !u!1 &945186082
 GameObject:
   m_ObjectHideFlags: 0
@@ -13269,6 +13352,7 @@ Transform:
   - {fileID: 543450651582368491}
   - {fileID: 765154871}
   - {fileID: 617234739}
+  - {fileID: 1637605697}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14377,8 +14461,8 @@ RectTransform:
   m_Children:
   - {fileID: 768233863}
   - {fileID: 1312479655}
-  - {fileID: 1943864467}
   - {fileID: 1753681822}
+  - {fileID: 1943864467}
   - {fileID: 2030388560}
   - {fileID: 7794201435802035263}
   - {fileID: 1970939932}
@@ -21087,6 +21171,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1637605696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1637605697}
+  - component: {fileID: 1637605698}
+  m_Layer: 0
+  m_Name: GetOut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1637605697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637605696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.87, y: 0.46, z: -3.84}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1154734082}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1637605698
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637605696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 4, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1644236443
 GameObject:
   m_ObjectHideFlags: 0
@@ -21664,6 +21792,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 642466903069573207, guid: 750cbf690afdea143ae41e8e2aade7aa, type: 3}
   m_PrefabInstance: {fileID: 1663709692}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1666190172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1666190173}
+  - component: {fileID: 1666190174}
+  m_Layer: 0
+  m_Name: DialogueSinTicket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1666190173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666190172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 326244347}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1666190174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666190172}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  popUpMgs: {fileID: 1501047984}
+  canDamage: 0
+  animator: {fileID: 0}
+  dialogue:
+    name: Cortador de Tela
+    sentences:
+    - Buenas noches, necesita un ticket de pedido para que pueda ayudarlo
+    - Primero encuentre a otro EMPLEADO y luego vaya a pagar a CAJA
+    poses: 02000000020000000200000002000000
+  isTalking: 0
+  distanceObj: 0
+  talkPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1673306044
 GameObject:
   m_ObjectHideFlags: 0
@@ -22484,7 +22668,7 @@ RectTransform:
   - {fileID: 1240944658}
   - {fileID: 2087364749}
   m_Father: {fileID: 1218350435}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -23974,6 +24158,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c13f7206784c41468d282582dde2c93, type: 3}
   m_PrefabInstance: {fileID: 1884682289}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1897906070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1897906071}
+  - component: {fileID: 1897906072}
+  m_Layer: 0
+  m_Name: DialogueWithCloth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1897906071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897906070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 326244347}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1897906072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897906070}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  popUpMgs: {fileID: 1501047984}
+  canDamage: 0
+  animator: {fileID: 0}
+  dialogue:
+    name: Cortador de Tela
+    sentences:
+    - "Ya tienes tu tela, SAL de aqu\xED"
+    poses: 02000000
+  isTalking: 0
+  distanceObj: 0
+  talkPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1899316178
 GameObject:
   m_ObjectHideFlags: 0
@@ -24292,6 +24531,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910637635}
   m_CullTransparentMesh: 1
+--- !u!1 &1918396505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1918396506}
+  - component: {fileID: 1918396507}
+  - component: {fileID: 1918396508}
+  m_Layer: 0
+  m_Name: DialogueEntrega
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1918396506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918396505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 326244347}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1918396507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918396505}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  popUpMgs: {fileID: 1501047984}
+  canDamage: 0
+  animator: {fileID: 0}
+  dialogue:
+    name: Cortador de Tela
+    sentences:
+    - Todo listo. Hago entrega de la tela requerida.
+    - Gracias por su preferencia.
+    poses: 0100000003000000
+  isTalking: 0
+  distanceObj: 0
+  talkPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1918396508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918396505}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2abd804c098823a418e7bf93d7277691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1925064266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24752,7 +25060,7 @@ RectTransform:
   - {fileID: 1377055912}
   - {fileID: 1910637636}
   m_Father: {fileID: 1218350435}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

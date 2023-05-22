@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public GameObject ghost01;
     public GameObject ghost02;
 
+    public bool hasWon;
+
 
     #region Singleton
     private void Awake()

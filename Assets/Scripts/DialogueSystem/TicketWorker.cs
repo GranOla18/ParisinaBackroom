@@ -5,7 +5,6 @@ using UnityEngine;
 public class TicketWorker : MonoBehaviour
 {
     public bool hasGivenTicket;
-    string sentence;
     public DialogueTrigger dialogueTriggerSinTicket;
     public DialogueTrigger dialogueTriggerConTicket;
 
