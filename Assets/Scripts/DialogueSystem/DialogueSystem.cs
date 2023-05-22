@@ -13,6 +13,9 @@ public class DialogueSystem : MonoBehaviour
 
     public Queue<string> sentences;
 
+    public delegate void FinishDialogue();
+    public FinishDialogue onFinishDialogue;
+
     #region Singleton
     private void Awake()
     {
@@ -82,6 +85,12 @@ public class DialogueSystem : MonoBehaviour
 
     void EndDialogue()
     {
+        if (onFinishDialogue != null)
+        {
+            onFinishDialogue.Invoke();
+            Debug.Log("Termine dialogo");
+        }
+
         dialogBox.enabled = false;
         Debug.Log("End conversation");
         PlayerManager.instance.isTalking = false;

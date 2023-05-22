@@ -62,6 +62,7 @@ public class FlashlightBehaviour : MonoBehaviour
     private void OnEnable()
     {
         HUD.instance.LinkFlashlight();
+        GameManager.instance.PlayerGivenFL();
     }
 
     private void OnDisable()

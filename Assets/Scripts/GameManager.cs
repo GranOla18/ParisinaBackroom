@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     public GameManager playerFL;
     public Light workingLight;
 
+    public bool playerHasFL;
+
+    public ObjectiveCloth objCloth;
+
     #region Singleton
     private void Awake()
     {
@@ -83,5 +87,11 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         //Debug.LogError("moricion");
+    }
+
+    public void PlayerGivenFL()
+    {
+        playerHasFL = true;
+        objCloth.enabled = true;
     }
 }
