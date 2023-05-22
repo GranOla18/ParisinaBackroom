@@ -17,6 +17,8 @@ public class HUD : MonoBehaviour
     public delegate void UpdateHUD();
     public UpdateHUD onUpdateHUD;
 
+    public Canvas folletoCanvas;
+
     #region Singleton
     private void Awake()
     {
@@ -63,5 +65,10 @@ public class HUD : MonoBehaviour
     public void ModifyBreath(float newBreath)
     {
         breathBar.fillAmount = newBreath / PlayerManager.instance.maxBreath;
+    }
+
+    public void ShowMapFolleto(bool show)
+    {
+        folletoCanvas.enabled = show;
     }
 }

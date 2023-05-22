@@ -52,8 +52,9 @@ public class MomCall : MonoBehaviour
 
     public void MomEndCall()
     {
-        //this.gameObject.SetActive(false);
-        Debug.Log("cola");
+        cellIcon.enabled = false;
+        this.gameObject.SetActive(false);
+        //Debug.Log("cola");
     }
 
 

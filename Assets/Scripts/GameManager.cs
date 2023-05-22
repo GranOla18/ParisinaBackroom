@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public bool isPaused;
+    bool isShowingFolleto;
 
     public static GameManager instance;
 
@@ -23,8 +24,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject ghost01;
     public GameObject ghost02;
-    //public GhostAI ghost01;
-    //public GhostAI ghost02;
+
 
     #region Singleton
     private void Awake()
@@ -54,6 +54,22 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 PauseGame();
+            }
+            if (!isShowingFolleto)
+            {
+                if (Input.GetKeyDown(KeyCode.M))
+                {
+                    HUD.instance.ShowMapFolleto(true);
+                    isShowingFolleto = true;
+                }
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.M))
+                {
+                    HUD.instance.ShowMapFolleto(false);
+                    isShowingFolleto = false;
+                }
             }
         }
 
