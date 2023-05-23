@@ -10,6 +10,7 @@ public class GameOverUI : MonoBehaviour
     public Image blackImg;
     public Image gameOverImage;
     public Canvas gameOverCanvas;
+    //public GameObject gameOverGO;
     public GraphicRaycaster graphicRaycaster;
 
     public Color currentColor;
@@ -35,12 +36,14 @@ public class GameOverUI : MonoBehaviour
 
     public IEnumerator FadeToBlackRoutine()
     {
+        gameOverCanvas.enabled = true;
+
         float a;
+
         //ghost.Wait();
         //hasFaded = false;
         while (!hasFadeToBlack)
         {
-
             currentColor = blackImg.color;
             a = Mathf.Lerp(currentColor.a, 1, fadeSpeed * Time.deltaTime);
 
@@ -50,11 +53,12 @@ public class GameOverUI : MonoBehaviour
             {
                 hasFadeToBlack = true;
                 blackImg.color = new Color(currentColor.r, currentColor.g, currentColor.b, 1);
+
             }
             yield return new WaitForEndOfFrame();
         }
 
-        gameOverCanvas.enabled = true;
+        //gameOverGO.SetActive(true);
         StartCoroutine(ShowGameOverRoutine());
 
     }
@@ -62,20 +66,29 @@ public class GameOverUI : MonoBehaviour
     public IEnumerator ShowGameOverRoutine()
     {
         float a;
+        //float aB;
+
+        //Color cc;
+
+
         //ghost.Wait();
         //hasFaded = false;
         while (!hasShownImage)
         {
+            //cc = blackImg.color;
 
             currentColor = gameOverImage.color;
             a = Mathf.Lerp(currentColor.a, 1, fadeSpeed * Time.deltaTime);
+            //aB = Mathf.Lerp(cc.a, 0, fadeSpeed * Time.deltaTime);
 
             gameOverImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, a);
+            //blackImg.color = new Color(cc.r, cc.g, cc.b, aB);
 
             if (a >= 0.99)
             {
                 hasShownImage = true;
                 gameOverImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, 1);
+                //blackImg.color = new Color(cc.r, cc.g, cc.b, 0);
             }
             yield return new WaitForEndOfFrame();
         }

@@ -10,6 +10,7 @@ public class GetOutWin : MonoBehaviour
     public Image blackImg;
     public Image winImage;
     public Canvas winCanvas;
+    public GameObject winGO;
     public GraphicRaycaster graphicRaycaster;
 
     public Color currentColor;
@@ -35,6 +36,8 @@ public class GetOutWin : MonoBehaviour
 
     public IEnumerator FadeToBlackRoutine()
     {
+        winCanvas.enabled = true;
+
         float a;
         //ghost.Wait();
         //hasFaded = false;
@@ -54,7 +57,8 @@ public class GetOutWin : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        winCanvas.enabled = true;
+        //winGO.SetActive(true);
+
         StartCoroutine(ShowWinRoutine());
 
     }
@@ -62,20 +66,28 @@ public class GetOutWin : MonoBehaviour
     public IEnumerator ShowWinRoutine()
     {
         float a;
+        //float aB;
+
+        //Color blackCurrentColor;
         //ghost.Wait();
         //hasFaded = false;
         while (!hasShownImage)
         {
-
+            //blackCurrentColor = blackImg.color;
             currentColor = winImage.color;
+
             a = Mathf.Lerp(currentColor.a, 1, fadeSpeed * Time.deltaTime);
+            //aB = Mathf.Lerp(blackCurrentColor.a, 0, fadeSpeed * Time.deltaTime);
 
             winImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, a);
+            //blackImg.color = new Color(blackCurrentColor.r, blackCurrentColor.g, blackCurrentColor.b, aB);
 
             if (a >= 0.99)
             {
                 hasShownImage = true;
                 winImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, 1);
+                //blackImg.color = new Color(blackCurrentColor.r, blackCurrentColor.g, blackCurrentColor.b, 0);
+
             }
             yield return new WaitForEndOfFrame();
         }
@@ -93,6 +105,7 @@ public class GetOutWin : MonoBehaviour
     {
         if (other.GetComponent<PlayerManager>())
         {
+            Cursor.lockState = CursorLockMode.None;
             StartCoroutine(FadeToBlackRoutine());
             graphicRaycaster.enabled = true;
             GameManager.instance.Win();

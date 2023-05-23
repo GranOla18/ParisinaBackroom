@@ -60,6 +60,8 @@ public class FlickerLights : MonoBehaviour
 
         generalLight.intensity = 1;
 
+        this.enabled = false;
+
     }
 
     private void OnTriggerEnter(Collider other)

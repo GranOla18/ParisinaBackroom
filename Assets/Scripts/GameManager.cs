@@ -155,6 +155,7 @@ public class GameManager : MonoBehaviour
         {
             onGameOver.Invoke();
         }
+        Cursor.lockState = CursorLockMode.None;
         //Time.timeScale = 0;
         PlayerMovement.instance.enabled = false;
         gameOverUI.StartCoroutine(gameOverUI.FadeToBlackRoutine());
@@ -168,6 +169,7 @@ public class GameManager : MonoBehaviour
         {
             onWin.Invoke();
         }
+        Cursor.lockState = CursorLockMode.None;
         //Time.timeScale = 0;
         PlayerMovement.instance.enabled = false;
         Debug.Log("WIN");

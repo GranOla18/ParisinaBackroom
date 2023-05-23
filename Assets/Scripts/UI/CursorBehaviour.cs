@@ -41,7 +41,7 @@ public class CursorBehaviour : MonoBehaviour
 
     public void ShowCursor()
     {
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
         Debug.Log("cola");
     }
 }
