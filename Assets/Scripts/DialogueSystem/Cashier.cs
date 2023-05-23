@@ -6,6 +6,7 @@ public class Cashier : MonoBehaviour
 {
     public DialogueTrigger dialogueTriggerConTicket;
     public DialogueTrigger dialogueTriggerSinTicket;
+    public CashierWorker cashierWorker;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class Cashier : MonoBehaviour
             if (PlayerManager.instance.hasTicket)
             {
                 dialogueTriggerConTicket.enabled = true;
+                cashierWorker.enabled = true;
                 dialogueTriggerSinTicket.enabled = false;
             }
             else
@@ -27,11 +29,5 @@ public class Cashier : MonoBehaviour
                 dialogueTriggerSinTicket.enabled = true;
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

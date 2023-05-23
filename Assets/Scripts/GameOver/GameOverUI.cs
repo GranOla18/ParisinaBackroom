@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
 {
-    public GameOverUI instance;
+    public static GameOverUI instance;
 
     public Image blackImg;
     public Image gameOverImage;
     public Canvas gameOverCanvas;
+    public GraphicRaycaster graphicRaycaster;
 
     public Color currentColor;
 
@@ -45,7 +46,7 @@ public class GameOverUI : MonoBehaviour
 
             blackImg.color = new Color(currentColor.r, currentColor.g, currentColor.b, a);
 
-            if (a >= 0.99)
+            if (a >= 0.98)
             {
                 hasFadeToBlack = true;
                 blackImg.color = new Color(currentColor.r, currentColor.g, currentColor.b, 1);
@@ -79,6 +80,7 @@ public class GameOverUI : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        graphicRaycaster.enabled = true;
 
     }
 

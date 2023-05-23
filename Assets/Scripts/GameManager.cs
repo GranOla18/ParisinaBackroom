@@ -22,8 +22,20 @@ public class GameManager : MonoBehaviour
     public delegate void GameOverDel();
     public GameOverDel onGameOver;
 
+    public delegate void WinDel();
+    public WinDel onWin;
+
     public GameObject ghost01;
     public GameObject ghost02;
+
+    public GameObject taylor;
+    public GameObject ticketWorker;
+
+    public GameObject fake01;
+    public GameObject fake02;
+
+    public GameObject fakeStand01;
+    public GameObject fakeStand02;
 
     public bool hasWon;
 
@@ -123,8 +135,20 @@ public class GameManager : MonoBehaviour
 
         ghost01.SetActive(true);
         ghost02.SetActive(true);
+
+        ticketWorker.SetActive(true);
+        fakeStand01.SetActive(true);
+        fakeStand02.SetActive(true);
     }
 
+    public void AppearTaylors()
+    {
+        taylor.SetActive(true);
+        fake01.SetActive(true);
+        fake02.SetActive(true);
+    }
+
+    [ContextMenu("Game Over")]
     public void GameOver()
     {
         if(onGameOver != null)
@@ -135,6 +159,18 @@ public class GameManager : MonoBehaviour
         PlayerMovement.instance.enabled = false;
         gameOverUI.StartCoroutine(gameOverUI.FadeToBlackRoutine());
         Debug.Log("GAME OVER");
+    }
+
+    [ContextMenu("Win")]
+    public void Win()
+    {
+        if (onWin != null)
+        {
+            onWin.Invoke();
+        }
+        //Time.timeScale = 0;
+        PlayerMovement.instance.enabled = false;
+        Debug.Log("WIN");
     }
 
     public void PlayerGivenFL()

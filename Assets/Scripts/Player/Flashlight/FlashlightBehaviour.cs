@@ -170,12 +170,12 @@ public class FlashlightBehaviour : MonoBehaviour
                     //Debug.Log("Ray hit distance " + flHit.distance);
                     //coladist = flHit.distance;
 
-                    if (flHit.collider.GetComponentInChildren<FakeWorkerManager>() && (flHit.distance < showFakeWorkerDist))
+                    if (flHit.collider.GetComponentInChildren<FakeWorkerReveal>() && (flHit.distance < showFakeWorkerDist))
                     {
                         //choque.collider.GetComponent<FakeWorkerManager>().ShowFakeMAT();
 
                         //Debug.Log("pene");
-                        flHit.collider.GetComponentInChildren<FakeWorkerManager>().ShowFakeMAT();
+                        flHit.collider.GetComponentInChildren<FakeWorkerReveal>().ShowFakeMAT();
                     }
                     else if(flHit.collider.GetComponentInChildren<GhostManager>() && (flHit.distance < stuntGhost))
                     {

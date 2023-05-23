@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class HandingClothDialogue : MonoBehaviour
 {
+    public GameObject getOutTrigger;
+    public Outline outline;
+
     private void OnEnable()
     {
         DialogueSystem.instance.onStartDialogue += HandingCloth;
@@ -18,6 +21,8 @@ public class HandingClothDialogue : MonoBehaviour
     public void HandingCloth()
     {
         GameManager.instance.hasWon = true;
-
+        getOutTrigger.SetActive(true);
+        outline.enabled = false;
+        //StopAllCoroutines();
     }
 }

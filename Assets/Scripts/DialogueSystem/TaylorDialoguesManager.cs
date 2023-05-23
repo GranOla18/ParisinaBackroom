@@ -12,7 +12,6 @@ public class TaylorDialoguesManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("cola");
         if (PlayerManager.instance.hasTicket && PlayerManager.instance.hasPaid && !PlayerManager.instance.hasCloth && !GameManager.instance.hasWon)
         {
             //dTSinTicket.enabled = false;

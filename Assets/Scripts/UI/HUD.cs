@@ -19,6 +19,9 @@ public class HUD : MonoBehaviour
 
     public Canvas folletoCanvas;
 
+    public Image fLOutline;
+    public Image fLFill;
+
     #region Singleton
     private void Awake()
     {
@@ -49,6 +52,8 @@ public class HUD : MonoBehaviour
     public void LinkFlashlight()
     {
         FlashlightBehaviour.instance.onBatteryChange += ModifyBattery;
+        fLFill.enabled = true;
+        fLOutline.enabled = true;
     }
 
     public void ModifyHealth(float newHealth)

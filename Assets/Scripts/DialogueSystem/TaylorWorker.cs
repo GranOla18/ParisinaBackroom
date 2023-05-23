@@ -15,12 +15,12 @@ public class TaylorWorker : MonoBehaviour
 
     public bool hasTurnAround;
 
+    public Outline outline;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        dT = this.GetComponent<DialogueTrigger>();
-        dT.onPoseChange += GiveCloth;
-        DialogueSystem.instance.onFinishDialogue += PrepareCloth;
 
         //targetAngles = transform.eulerAngles + 180f * Vector3.up; // what the new angles should be
         //transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, targetAngles, smooth * Time.deltaTime); // lerp to new angles
@@ -34,7 +34,7 @@ public class TaylorWorker : MonoBehaviour
         dTEntrega.enabled = true;
         Debug.Log("Finished working");
         hasTurnAround = false;
-        targetAngles = transform.eulerAngles + 200f * Vector3.up; // what the new angles should be
+        targetAngles = 160 * Vector3.up; // what the new angles should be
 
         this.GetComponent<Animator>().SetTrigger("Idle");
 
@@ -42,22 +42,30 @@ public class TaylorWorker : MonoBehaviour
         {
             auxAngle = Vector3.Lerp(transform.eulerAngles, targetAngles, smooth * Time.deltaTime); // lerp to new angles
             transform.eulerAngles = auxAngle;
-            if (transform.eulerAngles.y >= 175)
+            Debug.Log(transform.eulerAngles);
+            if (transform.eulerAngles.y <= 175)
             {
-                transform.eulerAngles = targetAngles - 20 * Vector3.up;
+                transform.eulerAngles = targetAngles + 20 * Vector3.up;
                 hasTurnAround = true;
             }
             yield return new WaitForEndOfFrame();
         }
 
         PlayerManager.instance.hasCloth = true;
+        outline.enabled = true;
+    }
 
+    private void OnEnable()
+    {
+        dT = this.GetComponent<DialogueTrigger>();
+        dT.onPoseChange += GiveCloth;
     }
 
     private void OnDisable()
     {
         dT.onPoseChange -= GiveCloth;
         DialogueSystem.instance.onFinishDialogue -= PrepareCloth;
+        StopAllCoroutines();
     }
 
     public void GiveCloth()
@@ -73,10 +81,12 @@ public class TaylorWorker : MonoBehaviour
 
     public void PrepareCloth()
     {
-        Debug.Log("Preparing Cloth");
-        targetAngles = transform.eulerAngles - 200f * Vector3.up; // what the new angles should be
-        StartCoroutine(TurnRoutine());
-
+        if (!PlayerManager.instance.hasCloth)
+        {
+            Debug.Log("Preparing Cloth");
+            targetAngles = 290 * Vector3.up; // what the new angles should be
+            StartCoroutine(TurnRoutine());
+        }
     }
 
     IEnumerator TurnRoutine()
@@ -87,9 +97,11 @@ public class TaylorWorker : MonoBehaviour
         {
             auxAngle = Vector3.Lerp(transform.eulerAngles, targetAngles, smooth * Time.deltaTime); // lerp to new angles
             transform.eulerAngles = auxAngle;
-            if(transform.eulerAngles.y <= 5)
+            //Debug.Log(transform.eulerAngles);
+
+            if (transform.eulerAngles.y >= 265)
             {
-                transform.eulerAngles = targetAngles + 20 * Vector3.up;
+                transform.eulerAngles = targetAngles - 20 * Vector3.up;
                 hasTurnAround = true;
             }
             yield return new WaitForEndOfFrame();
@@ -97,5 +109,10 @@ public class TaylorWorker : MonoBehaviour
         this.GetComponent<Animator>().SetTrigger("Work");
 
         StartCoroutine(WorkRoutine());
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        DialogueSystem.instance.onFinishDialogue += PrepareCloth;
     }
 }

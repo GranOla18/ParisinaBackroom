@@ -13,6 +13,11 @@ public class CashierWorker : MonoBehaviour
         dT.onPoseChange += CashierPay;
     }
 
+    private void OnEnable()
+    {
+        dT.onPoseChange += CashierPay;
+    }
+
     private void OnDisable()
     {
         dT.onPoseChange -= CashierPay;
@@ -20,12 +25,12 @@ public class CashierWorker : MonoBehaviour
 
     public void CashierPay()
     {
-        Debug.Log("cambio");
         if (DialogueSystem.instance.sentences.Count == 1)
         {
             //DialogueSystem.instance.EndDialogue();
             //hasGivenTicket = true;
             PlayerManager.instance.hasPaid = true;
+            GameManager.instance.AppearTaylors();
             Debug.Log("Player has paid");
         }
     }

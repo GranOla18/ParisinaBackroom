@@ -35,11 +35,13 @@ public class CursorBehaviour : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             GameManager.instance.onGameOver += ShowCursor;
+            GameManager.instance.onWin += ShowCursor;
         }
     }
 
     public void ShowCursor()
     {
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.None;
+        Debug.Log("cola");
     }
 }
