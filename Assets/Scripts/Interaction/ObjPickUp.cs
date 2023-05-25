@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjPickUp : Interactable
 {
+    public Transform pickUpPos;
     float distanceObj;
     bool isPickedUp;
     public float thowForce;
@@ -24,9 +25,11 @@ public class ObjPickUp : Interactable
     {
         Debug.Log("Picked up");
         isPickedUp = true;
-        transform.parent = CameraBehaviour.instance.transform;
+        //transform.parent = CameraBehaviour.instance.transform;
+        transform.SetParent(pickUpPos);
+        transform.localPosition = Vector3.zero;
         rb.useGravity = false;
-        rb.freezeRotation = true;
+        //rb.freezeRotation = true;
         rb.isKinematic = true;
         cast.SetActive(false);
     }
@@ -34,7 +37,8 @@ public class ObjPickUp : Interactable
     void Throw()
     {
         Debug.Log("Throw");
-        transform.parent = null;
+        transform.SetParent(null);
+        //transform.parent = null;
         rb.useGravity = true;
         rb.freezeRotation = false;
         rb.isKinematic = false;
