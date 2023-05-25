@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Interactable : MonoBehaviour
 {
+    // FFD200
+    // 8C7300
+
     public float radius;
 
     [SerializeField]
@@ -12,12 +15,13 @@ public class Interactable : MonoBehaviour
 
     public Image popUpMgs;
 
+    public Outline outline;
+
     public bool canDamage;
 
     void Start()
     {
         PopUp(false);
-        
     }
 
     public virtual void CheckDistance(float distance)
@@ -28,7 +32,19 @@ public class Interactable : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                if (outline)
+                {
+                    outline.OutlineWidth = 0;
+                }
+
                 Interact();
+            }
+        }
+        else
+        {
+            if (outline)
+            {
+                outline.OutlineWidth = 0;
             }
         }
     }
@@ -70,6 +86,11 @@ public class Interactable : MonoBehaviour
             if (!canDamage)
             {
                 PopUp(true);
+                
+                if (outline)
+                {
+                    outline.OutlineWidth = 6;
+                }
             }
             else
             {
@@ -83,6 +104,11 @@ public class Interactable : MonoBehaviour
         if (!canDamage)
         {
             PopUp(false);
+        }
+
+        if (outline)
+        {
+            outline.OutlineWidth = 0;
         }
     }
 }

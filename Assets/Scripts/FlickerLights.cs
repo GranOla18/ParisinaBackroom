@@ -8,11 +8,12 @@ public class FlickerLights : MonoBehaviour
     public int timesFlick;
     public float flickSpeed;
 
-    public Outline GuardOutline;
+    public Outline guardOutline;
     // Start is called before the first frame update
     void Start()
     {
-        GuardOutline.enabled = false;
+        //GuardOutline.enabled = false;
+        guardOutline.OutlineWidth = 0;
     }
 
     // Update is called once per frame
@@ -47,7 +48,8 @@ public class FlickerLights : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        GuardOutline.enabled = true;
+        //guardOutline.enabled = true;
+        guardOutline.OutlineWidth = 6;
 
         while (generalLight.intensity < 0.9)
         {
@@ -59,9 +61,6 @@ public class FlickerLights : MonoBehaviour
         }
 
         generalLight.intensity = 1;
-
-        this.enabled = false;
-
     }
 
     private void OnTriggerEnter(Collider other)

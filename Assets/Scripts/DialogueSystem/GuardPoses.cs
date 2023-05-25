@@ -37,7 +37,6 @@ public class GuardPoses : MonoBehaviour
         dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
         dialogueTrigger.onPoseChange += ChangeGuardPose;
         animator = this.gameObject.GetComponent<Animator>();
-        DialogueSystem.instance.onStartDialogue += StopOutline;
         //DialogueSystem.instance.onFinishDialogue += StopOutline;
     }
 
@@ -52,10 +51,16 @@ public class GuardPoses : MonoBehaviour
     {
         flPlayer.SetActive(true);
         flGuard.SetActive(false);
+        this.enabled = false;
     }
 
     public void StopOutline()
     {
         this.GetComponent<Outline>().enabled = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        DialogueSystem.instance.onStartDialogue += StopOutline;
     }
 }
