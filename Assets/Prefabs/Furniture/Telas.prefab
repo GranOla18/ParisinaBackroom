@@ -724,6 +724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4241331300999115562}
   - component: {fileID: 8735677642289361787}
+  - component: {fileID: 3514782022719243558}
   m_Layer: 0
   m_Name: HideCamera
   m_TagString: Untagged
@@ -788,6 +789,35 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &3514782022719243558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666579893537068802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fedc9c35d33c9544bd5239e7958d571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sha: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
+  mat: {fileID: 0}
+  flatLut: {fileID: 2800000, guid: a58d22c71d8fc93478b5ccd66d685d8f, type: 3}
+  bayerTexture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
+  ColorBleed: 0.25
+  LinesMult: 0.8
+  ColorShift: 0.29
+  newScreenSize: {x: 640, y: 480}
+  screenStretching: {x: 2, y: 1}
+  CustomScreenSize: 1
+  AspectRatioBars: 1
+  OneBitColor: 0
+  VerticalLines: 0
+  HorizontalLines: 0
+  Dithering: 1
+  Paletting: 1
+  clearNextUpdate: 0
 --- !u!1 &2822783036996168305
 GameObject:
   m_ObjectHideFlags: 0
