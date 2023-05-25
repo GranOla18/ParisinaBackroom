@@ -16,9 +16,14 @@ public class GhostManager : Interactable
 
     bool isFading;
 
+    public AudioClip[] hitSFX;
+    AudioSource audioSource;
+    public int rndSFX;
+
     private void Start()
     {
         mat = GetComponent<MeshRenderer>().materials;
+        audioSource = GetComponent<AudioSource>();
         originalColor = mat[0].color;
     }
 
@@ -64,6 +69,7 @@ public class GhostManager : Interactable
             StopAllCoroutines();
             isFading = true;
             PlayerManager.instance.Damage();
+            audioSource.Play();
             StartCoroutine(FadeRoutine());
             Debug.Log("bye");
         }

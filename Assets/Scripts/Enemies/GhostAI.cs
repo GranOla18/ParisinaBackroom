@@ -11,7 +11,9 @@ public class GhostAI : MonoBehaviour
     public Vector3 target;
     public bool sawPlayer;
     public bool isWaiting;
+    public float timeStopped;
     public GhostManager ghostMan;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +22,27 @@ public class GhostAI : MonoBehaviour
         isWaiting = false;
         //GotoNextPoint();
         StartCoroutine(RoutinePatroll());
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
+        //if (agent.isStopped)
+        //{
+        //    timeStopped += Time.deltaTime;
+        //    Debug.Log("Estoy parado");
+        //}
+        //else if (!agent.isStopped)
+        //{
+        //    timeStopped = 0;
+        //    Debug.Log("No estoy parado");
+        //}
+        //else if(timeStopped >= 4.2)
+        //{
+        //    Debug.Log("Demasiado tiempo parado, cambio");
+        //    agent.isStopped = false;
+        //    GotoNextPoint();
+        //}
     }
 
     private void OnEnable()
@@ -62,8 +79,13 @@ public class GhostAI : MonoBehaviour
             sawPlayer = true;
             //agent.updatePosition
             agent.SetDestination(other.transform.position);
+            audioSource.Play();
             Debug.Log("Siguiendo al jugador");
         }
+        //else if (other.GetComponent<WalkPointManager>())
+        //{
+        //    StartCoroutine(RoutinePatroll());
+        //}
     }
 
     private void OnTriggerExit(Collider other)

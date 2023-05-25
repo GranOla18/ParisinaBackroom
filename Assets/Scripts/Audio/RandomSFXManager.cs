@@ -14,7 +14,12 @@ public class RandomSFXManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        StartCoroutine(PlayRandomSFX());
+        GameManager.instance.onStartGame += StartRadomSFX;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.instance.onStartGame -= StartRadomSFX;
     }
 
     // Update is called once per frame
@@ -23,11 +28,16 @@ public class RandomSFXManager : MonoBehaviour
         time += Time.deltaTime;
     }
 
+    public void StartRadomSFX()
+    {
+        StartCoroutine(PlayRandomSFX());
+    }
+
     IEnumerator PlayRandomSFX()
     {
         while (true)
         {
-            randomTime = Random.Range(30.0f, 60.0f);
+            randomTime = Random.Range(25.0f, 45.0f);
             yield return new WaitForSeconds(randomTime);
             rndSFX = Random.Range(0, 2);
             audioSource.PlayOneShot(randomSFX[rndSFX]);

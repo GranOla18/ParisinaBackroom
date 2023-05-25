@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
 
     public GameOverUI gameOverUI;
 
+    public delegate void StartDel();
+    public StartDel onStartGame;
+
     public delegate void GameOverDel();
     public GameOverDel onGameOver;
 
@@ -130,6 +133,10 @@ public class GameManager : MonoBehaviour
     [ContextMenu("Start")]
     public void StartGame()
     {
+        if(onStartGame != null)
+        {
+            onStartGame.Invoke();
+        }
         RenderSettings.fog = true;
         workingLight.enabled = false;
 
