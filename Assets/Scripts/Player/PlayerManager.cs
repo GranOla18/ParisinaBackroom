@@ -6,6 +6,8 @@ public class PlayerManager : MonoBehaviour, IDamage
 {
     public static PlayerManager instance;
 
+    public GameObject flashlight;
+
     public int health;
     public int maxHealth;
     public float healthPercent;

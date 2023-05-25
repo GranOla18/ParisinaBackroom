@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5816257087229489473}
   - component: {fileID: 5816257087229489472}
   - component: {fileID: 5816257087229489475}
+  - component: {fileID: 863184643}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -58,7 +59,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 200
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -101,6 +102,35 @@ MonoBehaviour:
   player: {fileID: 5816257087237911025}
   canMove: 0
   lockCamera: 0
+--- !u!114 &863184643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5816257087229489533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fedc9c35d33c9544bd5239e7958d571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sha: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
+  mat: {fileID: 0}
+  flatLut: {fileID: 2800000, guid: a58d22c71d8fc93478b5ccd66d685d8f, type: 3}
+  bayerTexture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
+  ColorBleed: 0.25
+  LinesMult: 0.8
+  ColorShift: 0.29
+  newScreenSize: {x: 640, y: 480}
+  screenStretching: {x: 2, y: 1}
+  CustomScreenSize: 1
+  AspectRatioBars: 1
+  OneBitColor: 0
+  VerticalLines: 0
+  HorizontalLines: 0
+  Dithering: 1
+  Paletting: 1
+  clearNextUpdate: 0
 --- !u!1 &5816257087237911023
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +184,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5816257087237911023}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -235,19 +265,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  maxHealth: 0
+  maxHealth: 3
   healthPercent: 0
   isHealing: 0
   isHidden: 0
   timeHidden: 0
   isTalking: 0
-  maxBreath: 0
+  maxBreath: 6
   breath: 0
   breathPercent: 0
   isBreathChanging: 0
-  breathSpeed: 0
-  chokeSpeed: 0
+  breathSpeed: 2
+  chokeSpeed: 1
   curacion: {fileID: 8300000, guid: bc739f0684796e243af96639b15107c2, type: 3}
+  hasTicket: 0
+  hasPaid: 0
+  hasCloth: 0
 --- !u!114 &5816257087237911021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,6 +398,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5816257087229489474}
     m_Modifications:
+    - target: {fileID: 3826300749131094778, guid: d4f8dc6ec9628fc4f92bacb86fccf714, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826300749131094778, guid: d4f8dc6ec9628fc4f92bacb86fccf714, type: 3}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826300749131094778, guid: d4f8dc6ec9628fc4f92bacb86fccf714, type: 3}
+      propertyPath: m_SpotAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826300749131094778, guid: d4f8dc6ec9628fc4f92bacb86fccf714, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3876252940806059265, guid: d4f8dc6ec9628fc4f92bacb86fccf714, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -423,11 +472,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4503853819490119611, guid: d4f8dc6ec9628fc4f92bacb86fccf714, type: 3}
       propertyPath: m_Name
-      value: Linterna
+      value: Flashlight
       objectReference: {fileID: 0}
     - target: {fileID: 4503853819490119611, guid: d4f8dc6ec9628fc4f92bacb86fccf714, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066360481844688404, guid: d4f8dc6ec9628fc4f92bacb86fccf714, type: 3}
+      propertyPath: stuntGhost
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066360481844688404, guid: d4f8dc6ec9628fc4f92bacb86fccf714, type: 3}
+      propertyPath: timeToFlash
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4f8dc6ec9628fc4f92bacb86fccf714, type: 3}

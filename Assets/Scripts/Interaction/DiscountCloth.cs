@@ -63,6 +63,8 @@ public class DiscountCloth : Interactable
         hideCamera.enabled = true;
         isHidden = true;
         pM.isHidden = true;
+        PlayerMovement.instance.enabled = false;
+        PlayerManager.instance.flashlight.SetActive(false);
         StartCoroutine(pM.Choke());
     }
 
@@ -71,6 +73,9 @@ public class DiscountCloth : Interactable
         Debug.Log("Saliendo");
 
         int sfx = Random.Range(0, 1);
+
+        PlayerMovement.instance.enabled = true;
+        PlayerManager.instance.flashlight.SetActive(true);
 
         if (sfx == 0)
         {
