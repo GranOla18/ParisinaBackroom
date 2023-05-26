@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
     public bool isPaused;
     bool isShowingFolleto;
+
+    public AudioMixer masterMixer;
 
     public static GameManager instance;
 
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isPaused = false;
+        masterMixer.SetFloat("SFXVol", 0);
     }
 
     // Update is called once per frame
@@ -104,6 +108,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         PauseMenu.instance.ShowPauseMenu();
+        masterMixer.SetFloat("SFXVol", -80);
         isPaused = true;
     }
 
@@ -112,6 +117,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         PauseMenu.instance.HidePauseMenu();
+        masterMixer.SetFloat("SFXVol", 0);
         isPaused = false;
     }
 
@@ -166,6 +172,7 @@ public class GameManager : MonoBehaviour
         //Time.timeScale = 0;
         PlayerMovement.instance.enabled = false;
         gameOverUI.StartCoroutine(gameOverUI.FadeToBlackRoutine());
+        masterMixer.SetFloat("SFXVol", -80);
         Debug.Log("GAME OVER");
     }
 
@@ -179,6 +186,7 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         //Time.timeScale = 0;
         PlayerMovement.instance.enabled = false;
+        masterMixer.SetFloat("SFXVol", -80);
         Debug.Log("WIN");
     }
 

@@ -35,6 +35,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: de143e869146b8340b49c237f5411f28
+    name: MasterVol
   - guid: 3c102a17dfb6f0349b909d6ecb1f97c0
     name: RndSFXVol
   - guid: f7bda8c2160cb134081829b3fb35d7af

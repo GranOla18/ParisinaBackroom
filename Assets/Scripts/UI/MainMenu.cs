@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
     public Canvas mainMenu;
     public Canvas ajustes;
     public Canvas creditos;
+
+    public AudioMixer masterMixer;
 
     public void PlayGame()
     {
@@ -42,12 +45,6 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        masterMixer.SetFloat("SFXVol", 0);
     }
 }

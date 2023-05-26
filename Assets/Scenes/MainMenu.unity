@@ -2186,6 +2186,7 @@ MonoBehaviour:
   mainMenu: {fileID: 296345728}
   ajustes: {fileID: 649958707}
   creditos: {fileID: 53733241}
+  masterMixer: {fileID: 24100000, guid: 030af783ee3eece4cb3393686ee3d3e3, type: 2}
 --- !u!4 &1916035668
 Transform:
   m_ObjectHideFlags: 0
