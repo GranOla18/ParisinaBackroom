@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class WalkPointManager : MonoBehaviour
 {
+    //public enum ghostName
+    //{
+    //    Ghost01, Ghost02
+    //}
+
+    public string ghostName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +25,7 @@ public class WalkPointManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<GhostAI>())
+        if ((other.GetComponent<GhostAI>()) && (ghostName == other.name))
         {
             Debug.Log("start coroutine");
 

@@ -67,10 +67,11 @@ public class GhostManager : Interactable
         if (!PlayerManager.instance.isHidden && !isFading)
         {
             StopAllCoroutines();
+            StartCoroutine(FadeRoutine());
             isFading = true;
             PlayerManager.instance.Damage();
             audioSource.Play();
-            StartCoroutine(FadeRoutine());
+            ghost.agent.isStopped = true;
             Debug.Log("bye");
         }
         else

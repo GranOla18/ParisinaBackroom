@@ -119,6 +119,7 @@ public class GhostAI : MonoBehaviour
 
     public IEnumerator RoutinePatroll()
     {
+        yield return new WaitForSeconds(1.5f);
         agent.isStopped = true;
 
         //Debug.Log("Waiting");
