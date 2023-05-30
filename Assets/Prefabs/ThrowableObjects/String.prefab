@@ -140,7 +140,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3006199087900451979, guid: 030af783ee3eece4cb3393686ee3d3e3, type: 2}
-  m_audioClip: {fileID: 8300000, guid: a4ab973f6922f0a45be401a6511e98bc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3a87e9b0f85954547be548955b78de8c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -240,11 +240,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 2.5
   popUpMgs: {fileID: 0}
+  outline: {fileID: 0}
   canDamage: 0
+  pickUpPos: {fileID: 0}
   thowForce: 500
   cast: {fileID: 5336102788822563867}
   hasBeenThrown: 0
-  hasCollide: 0
 --- !u!1 &5336102788822563867
 GameObject:
   m_ObjectHideFlags: 0

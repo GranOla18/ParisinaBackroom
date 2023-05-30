@@ -300,8 +300,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 2.5
   popUpMgs: {fileID: 0}
+  outline: {fileID: 0}
   canDamage: 0
-  thowForce: 700
+  pickUpPos: {fileID: 0}
+  thowForce: 670
   cast: {fileID: 1610122378557023909}
   hasBeenThrown: 0
-  hasCollide: 0
