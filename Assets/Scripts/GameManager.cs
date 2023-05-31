@@ -33,21 +33,6 @@ public class GameManager : MonoBehaviour
     public delegate void WinDel();
     public WinDel onWin;
 
-    public GameObject entrance;
-    public GameObject guard;
-
-    public GameObject ghost01;
-    public GameObject ghost02;
-
-    public GameObject taylor;
-    public GameObject ticketWorker;
-
-    public GameObject fake01;
-    public GameObject fake02;
-
-    public GameObject fakeStand01;
-    public GameObject fakeStand02;
-
     public bool hasWon;
 
 
@@ -70,7 +55,6 @@ public class GameManager : MonoBehaviour
     {
         isPaused = false;
         masterMixer.SetFloat("SFXVol", 0);
-        //workingLights = new Queue<Light>();
     }
 
     // Update is called once per frame
@@ -150,29 +134,13 @@ public class GameManager : MonoBehaviour
             onStartGame.Invoke();
         }
         RenderSettings.fog = true;
-        //workingLight.enabled = false;
-        //foreach (Dialogue.Pose pose in dialogue.poses)
+
         foreach (Light light in workingLights)
         {
             light.enabled = false;
         }
 
-        entrance.SetActive(false);
-        guard.SetActive(false);
-
-        ghost01.SetActive(true);
-        ghost02.SetActive(true);
-
-        ticketWorker.SetActive(true);
-        fakeStand01.SetActive(true);
-        fakeStand02.SetActive(true);
-    }
-
-    public void AppearTaylors()
-    {
-        taylor.SetActive(true);
-        fake01.SetActive(true);
-        fake02.SetActive(true);
+        EnableNPCs.instance.StartGameNPCs();
     }
 
     [ContextMenu("Game Over")]

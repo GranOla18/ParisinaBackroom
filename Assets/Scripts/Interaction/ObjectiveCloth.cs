@@ -17,8 +17,6 @@ public class ObjectiveCloth : Interactable
         //dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
         //dialogueTrigger.onFinishDialogue += StartGameTrigger;
         outlineScriptHead = this.GetComponent<Outline>();
-        //outlineScriptBody.enabled = false;
-        //outlineScriptHead.enabled = false;
 
         outlineScriptBody.OutlineWidth = 0;
         outlineScriptHead.OutlineWidth = 0;
@@ -30,8 +28,7 @@ public class ObjectiveCloth : Interactable
     private void OnEnable()
     {
         outlineScriptHead = this.GetComponent<Outline>();
-        //outlineScriptHead.enabled = true;
-        //outlineScriptBody.enabled = true;
+
         outlineScriptBody.OutlineWidth = 10;
         outlineScriptHead.OutlineWidth = 10;
     }
@@ -39,7 +36,6 @@ public class ObjectiveCloth : Interactable
     private void OnDisable()
     {
         DialogueSystem.instance.onFinishDialogue -= StartGameTrigger;
-        //dialogueTrigger.onFinishDialogue -= StartGameTrigger;
     }
 
     // Update is called once per frame
@@ -60,8 +56,6 @@ public class ObjectiveCloth : Interactable
     {
         //Debug.Log("cola");
         GameManager.instance.StartGame();
-        //outlineScriptHead.enabled = false;
-        //outlineScriptBody.enabled = false;
         outlineScriptBody.OutlineWidth = 0;
         outlineScriptHead.OutlineWidth = 0;
         this.enabled = false;

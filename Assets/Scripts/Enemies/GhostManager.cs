@@ -50,8 +50,6 @@ public class GhostManager : Interactable
 
         ghost.Spawn();
         isFading = false;
-        
-        //Debug.Log("ya fade");
     }
 
     public void SetOriginalColor()

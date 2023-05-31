@@ -108,6 +108,9 @@ public class TaylorWorker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        DialogueSystem.instance.onFinishDialogue += PrepareCloth;
+        if (other.GetComponent<PlayerManager>())
+        {
+            DialogueSystem.instance.onFinishDialogue += PrepareCloth;
+        }
     }
 }

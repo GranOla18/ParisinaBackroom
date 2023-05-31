@@ -1,5 +1,90 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &629518084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 629518088}
+  - component: {fileID: 629518087}
+  - component: {fileID: 629518085}
+  - component: {fileID: 629518086}
+  m_Layer: 0
+  m_Name: Dialogo02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &629518088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629518084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3294419436431292421}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &629518087
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629518084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2.5, z: 1.5}
+  m_Center: {x: 0, y: 2, z: 1}
+--- !u!114 &629518085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629518084}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  popUpMgs: {fileID: 0}
+  outline: {fileID: 0}
+  canDamage: 0
+  animator: {fileID: 3040660342727593587}
+  dialogue:
+    name: Empleado de Entrada
+    sentences:
+    - "\xA1Ve a buscar la tela que necesitas! Est\xE1 a lado del botiqu\xEDn, b\xFAscalo
+      con el folelto que te di"
+    poses: 0100000003000000
+  isTalking: 0
+  distanceObj: 0
+  talkPos: {x: 0, y: 0, z: 0}
+--- !u!114 &629518086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629518084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e936b2b35e3c564daea69a7b9780e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueTrigger: {fileID: 0}
 --- !u!1 &34936942932868860
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,6 +957,8 @@ GameObject:
   - component: {fileID: 3040660342727593583}
   - component: {fileID: 3040660342727593582}
   - component: {fileID: -7284180821882284809}
+  - component: {fileID: 1809070193}
+  - component: {fileID: 1809070194}
   m_Layer: 0
   m_Name: WorkerEntrance
   m_TagString: Untagged
@@ -886,7 +973,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2806852702058930879}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1.2743683, y: -1.347806, z: -2.421215}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -903,6 +990,7 @@ Transform:
   - {fileID: 7050676653078209024}
   - {fileID: 7994488570560218657}
   - {fileID: 4536393717800717593}
+  - {fileID: 629518088}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -959,25 +1047,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2806852702058930879}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b422909be021d394e90bda7d513d7c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
   popUpMgs: {fileID: 0}
+  outline: {fileID: 0}
   canDamage: 0
   animator: {fileID: 3040660342727593587}
   dialogue:
-    name: Empleado de Entrada
+    name: Gerente
     sentences:
-    - "Buenas tardes, \xBFen qu\xE9 le puedo ayudar? "
     - "\xBFQu\xE9? No puede ser, ya vamos a cerrar y tu ni sabes el proceso para
       comprar una tela."
     - 'Ten, este folleto informativo te lo explica todo. '
-    - '*Recibe Folleto informativo*'
+    - Para verlo presiona M
     - "\xA1No vayas a tardar que te dejo encerrado!"
-    poses: 0000000001000000020000000300000000000000
+    poses: 00000000010000000200000003000000
   isTalking: 0
   distanceObj: 0
   talkPos: {x: 0, y: 0, z: 0}
@@ -994,6 +1082,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTrigger: {fileID: 0}
+--- !u!114 &1809070193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2806852702058930879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebeb1180c4ce779499eeec8b44b25098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueTrigger01: {fileID: 3040660342727593582}
+  dialogueTrigger02: {fileID: 629518085}
+  folletoGameObject: {fileID: 0}
+--- !u!114 &1809070194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2806852702058930879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.87459564, b: 0, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &3466319971518036117
 GameObject:
   m_ObjectHideFlags: 0

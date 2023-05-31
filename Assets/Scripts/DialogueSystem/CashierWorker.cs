@@ -30,14 +30,8 @@ public class CashierWorker : MonoBehaviour
             //DialogueSystem.instance.EndDialogue();
             //hasGivenTicket = true;
             PlayerManager.instance.hasPaid = true;
-            GameManager.instance.AppearTaylors();
+            EnableNPCs.instance.AppearTaylors();
             Debug.Log("Player has paid");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
