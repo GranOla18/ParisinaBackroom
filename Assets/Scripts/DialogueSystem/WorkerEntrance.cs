@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class WorkerEntrance : MonoBehaviour
 {
-    public DialogueTrigger dialogueTrigger;
+    public DialogueTrigger dialogueTrigger01;
+    public DialogueTrigger dialogueTrigger02;
 
     public GameObject folletoGameObject;
 
@@ -24,22 +25,36 @@ public class WorkerEntrance : MonoBehaviour
 
     public void Start()
     {
-        dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
-        dialogueTrigger.onPoseChange += CheckSentence;
+        dialogueTrigger01 = this.gameObject.GetComponent<DialogueTrigger>();
+        dialogueTrigger01.onPoseChange += CheckSentence;
         //DialogueSystem.instance.onFinishDialogue += StopOutline;
         DialogueSystem.instance.onStartDialogue += StopOutline;
     }
 
     private void OnDisable()
     {
-        dialogueTrigger.onPoseChange -= CheckSentence;
+        dialogueTrigger01.onPoseChange -= CheckSentence;
         //DialogueSystem.instance.onFinishDialogue -= StopOutline;
         DialogueSystem.instance.onStartDialogue -= StopOutline;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!PlayerManager.instance.hasFolleto)
+        {
+            dialogueTrigger01.enabled = true;
+        }
+        else
+        {
+            dialogueTrigger01.enabled = false;
+            dialogueTrigger02.enabled = true;
+        }
     }
 
     public void GiveFolleto()
     {
         folletoGameObject.SetActive(true);
+        PlayerManager.instance.hasFolleto = true;
     }
 
     public void StopOutline()

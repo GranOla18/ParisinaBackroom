@@ -36,6 +36,8 @@ public class PlayerManager : MonoBehaviour, IDamage
 
     public AudioClip curacion;
 
+    public bool hasFolleto;
+    public bool hasFlashlight;
     public bool hasTicket;
     public bool hasPaid;
     public bool hasCloth;

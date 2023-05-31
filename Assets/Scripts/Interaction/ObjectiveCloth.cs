@@ -8,6 +8,9 @@ public class ObjectiveCloth : Interactable
     public Outline outlineScriptHead;
     public Outline outlineScriptBody;
 
+    public DialogueTrigger dialogueStartGame;
+    public DialogueTrigger dialogueNoStartGame;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,5 +65,19 @@ public class ObjectiveCloth : Interactable
         outlineScriptBody.OutlineWidth = 0;
         outlineScriptHead.OutlineWidth = 0;
         this.enabled = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!PlayerManager.instance.hasFlashlight)
+        {
+            dialogueNoStartGame.enabled = true;
+            dialogueStartGame.enabled = false;
+        }
+        else
+        {
+            dialogueNoStartGame.enabled = false;
+            dialogueStartGame.enabled = true;
+        }
     }
 }

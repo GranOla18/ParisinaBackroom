@@ -51,6 +51,7 @@ public class GuardPoses : MonoBehaviour
     {
         flPlayer.SetActive(true);
         flGuard.SetActive(false);
+        PlayerManager.instance.hasFlashlight = true;
         this.enabled = false;
     }
 
