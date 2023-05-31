@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public GameManager playerFL;
-    public Light workingLight;
+    //public Light workingLight;
+    //public Queue<Light> workingLights;
+    public Light[] workingLights;
 
     public bool playerHasFL;
 
@@ -65,6 +67,7 @@ public class GameManager : MonoBehaviour
     {
         isPaused = false;
         masterMixer.SetFloat("SFXVol", 0);
+        //workingLights = new Queue<Light>();
     }
 
     // Update is called once per frame
@@ -144,7 +147,12 @@ public class GameManager : MonoBehaviour
             onStartGame.Invoke();
         }
         RenderSettings.fog = true;
-        workingLight.enabled = false;
+        //workingLight.enabled = false;
+        //foreach (Dialogue.Pose pose in dialogue.poses)
+        foreach (Light light in workingLights)
+        {
+            light.enabled = false;
+        }
 
         ghost01.SetActive(true);
         ghost02.SetActive(true);

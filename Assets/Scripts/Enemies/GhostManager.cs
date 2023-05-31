@@ -5,7 +5,7 @@ using UnityEngine;
 public class GhostManager : Interactable
 {
     public float fadeSpeed, fadeAmount;
-    float originalOpacity = 255;
+    //float originalOpacity = 255;
     Material[] mat;
     public bool bye;
     public GhostAI ghost;
