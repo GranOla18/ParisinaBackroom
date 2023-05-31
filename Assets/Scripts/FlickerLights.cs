@@ -5,8 +5,9 @@ using UnityEngine;
 public class FlickerLights : MonoBehaviour
 {
     public Light generalLight;
-    public int timesFlick;
+    private int timesFlick;
     public float flickSpeed;
+    public float originalIntensity;
 
     public Outline guardOutline;
     // Start is called before the first frame update
@@ -14,12 +15,6 @@ public class FlickerLights : MonoBehaviour
     {
         //GuardOutline.enabled = false;
         guardOutline.OutlineWidth = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator FlickerRoutine()
@@ -40,7 +35,7 @@ public class FlickerLights : MonoBehaviour
             {
                 if(timesFlick < 1)
                 {
-                    generalLight.intensity = 1;
+                    generalLight.intensity = originalIntensity;
                 }
                 timesFlick++;
             }
@@ -53,14 +48,14 @@ public class FlickerLights : MonoBehaviour
 
         while (generalLight.intensity < 0.9)
         {
-            newIntensity = Mathf.Lerp(generalLight.intensity, 1, 5* Time.deltaTime);
+            newIntensity = Mathf.Lerp(generalLight.intensity, originalIntensity, 5* Time.deltaTime);
 
             generalLight.intensity = newIntensity;
             
             yield return new WaitForEndOfFrame();
         }
 
-        generalLight.intensity = 1;
+        generalLight.intensity = originalIntensity;
     }
 
     private void OnTriggerEnter(Collider other)
