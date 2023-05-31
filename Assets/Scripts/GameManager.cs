@@ -33,6 +33,9 @@ public class GameManager : MonoBehaviour
     public delegate void WinDel();
     public WinDel onWin;
 
+    public GameObject entrance;
+    public GameObject guard;
+
     public GameObject ghost01;
     public GameObject ghost02;
 
@@ -153,6 +156,9 @@ public class GameManager : MonoBehaviour
         {
             light.enabled = false;
         }
+
+        entrance.SetActive(false);
+        guard.SetActive(false);
 
         ghost01.SetActive(true);
         ghost02.SetActive(true);

@@ -6,7 +6,8 @@ public class TaylorWorker : MonoBehaviour
 {
     public DialogueTrigger dT;
 
-    public float smooth = 1f;
+    public float smoothTurn;
+    public float workTime;
 
     private Vector3 targetAngles;
     private Vector3 auxAngle;
@@ -17,20 +18,12 @@ public class TaylorWorker : MonoBehaviour
 
     public Outline outline;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-        //targetAngles = transform.eulerAngles + 180f * Vector3.up; // what the new angles should be
-        //transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, targetAngles, smooth * Time.deltaTime); // lerp to new angles
-        //this.GetComponent<Animator>().SetTrigger("Work");
-        //StartCoroutine(WorkRoutine());
-    }
+    public bool isWorking;
 
     IEnumerator WorkRoutine()
     {
-        yield return new WaitForSeconds(3);
+        isWorking = true;
+        yield return new WaitForSeconds(workTime);
         dTEntrega.enabled = true;
         Debug.Log("Finished working");
         hasTurnAround = false;
@@ -40,9 +33,9 @@ public class TaylorWorker : MonoBehaviour
 
         while (!hasTurnAround)
         {
-            auxAngle = Vector3.Lerp(transform.eulerAngles, targetAngles, smooth * Time.deltaTime); // lerp to new angles
+            auxAngle = Vector3.Lerp(transform.eulerAngles, targetAngles, smoothTurn * Time.deltaTime); // lerp to new angles
             transform.eulerAngles = auxAngle;
-            Debug.Log(transform.eulerAngles);
+            //Debug.Log(transform.eulerAngles);
             if (transform.eulerAngles.y <= 175)
             {
                 transform.eulerAngles = targetAngles + 20 * Vector3.up;
@@ -53,12 +46,14 @@ public class TaylorWorker : MonoBehaviour
 
         PlayerManager.instance.hasCloth = true;
         outline.enabled = true;
+        isWorking = false;
     }
 
     private void OnEnable()
     {
         dT = this.GetComponent<DialogueTrigger>();
         dT.onPoseChange += GiveCloth;
+        isWorking = false;
     }
 
     private void OnDisable()
@@ -95,7 +90,7 @@ public class TaylorWorker : MonoBehaviour
 
         while (!hasTurnAround)
         {
-            auxAngle = Vector3.Lerp(transform.eulerAngles, targetAngles, smooth * Time.deltaTime); // lerp to new angles
+            auxAngle = Vector3.Lerp(transform.eulerAngles, targetAngles, smoothTurn * Time.deltaTime); // lerp to new angles
             transform.eulerAngles = auxAngle;
             //Debug.Log(transform.eulerAngles);
 

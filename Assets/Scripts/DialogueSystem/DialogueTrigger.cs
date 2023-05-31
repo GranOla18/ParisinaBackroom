@@ -60,7 +60,7 @@ public class DialogueTrigger : Interactable
 
         if (poses.Count == 0)
         {
-            Debug.Log("voy a idle");
+            //Debug.Log("Voy a idle");
             animator.SetTrigger("Idle");
         }
         else if (onPoseChange != null)

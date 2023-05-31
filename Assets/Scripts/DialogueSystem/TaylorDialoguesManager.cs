@@ -12,11 +12,13 @@ public class TaylorDialoguesManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Tiene el ticket, ya pago pero no tiene tela = Se atiende
         if (PlayerManager.instance.hasTicket && PlayerManager.instance.hasPaid && !PlayerManager.instance.hasCloth && !GameManager.instance.hasWon)
         {
             //dTSinTicket.enabled = false;
             dTConTicket.enabled = true;
         }
+        // Tiene tela, ya acabo = Decir que salga
         else if (PlayerManager.instance.hasCloth && GameManager.instance.hasWon)
         {
             Debug.Log("Get Out");
@@ -25,7 +27,8 @@ public class TaylorDialoguesManager : MonoBehaviour
             dTEntrega.enabled = false;
             dTFinish.enabled = true;
         }
-        else if(PlayerManager.instance.hasCloth && !GameManager.instance.hasWon)
+        // Tiene tela, no ha ganado = Entregar tela
+        else if (PlayerManager.instance.hasCloth && !GameManager.instance.hasWon)
         {
             Debug.Log("Entrega active");
             dTConTicket.enabled = false;
@@ -33,7 +36,6 @@ public class TaylorDialoguesManager : MonoBehaviour
             handingCloth.enabled = true;
             dTEntrega.enabled = true;
         }
-
     }
 
 }
