@@ -836,6 +836,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6066360481844688404, guid: d4f8dc6ec9628fc4f92bacb86fccf714, type: 3}
+      propertyPath: flashSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: f4c2b85ceeffe3f468bc25595f15dad4, type: 3}
+    - target: {fileID: 6066360481844688404, guid: d4f8dc6ec9628fc4f92bacb86fccf714, type: 3}
       propertyPath: stuntGhost
       value: 3
       objectReference: {fileID: 0}

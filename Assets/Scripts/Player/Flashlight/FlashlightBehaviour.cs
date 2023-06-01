@@ -15,6 +15,7 @@ public class FlashlightBehaviour : MonoBehaviour
     public bool canChargeNext;
 
     public AudioClip clickSFX;
+    public AudioClip flashSFX;
 
     public static FlashlightBehaviour instance;
 
@@ -148,6 +149,8 @@ public class FlashlightBehaviour : MonoBehaviour
             if (chargeFlash >= timeToFlash && flBattery >= 40)
             {
                 canFlash = true;
+                SFXManager.instance.audioSource.volume = 0.05f;
+                SFXManager.instance.audioSource.PlayOneShot(clickSFX);
             }
             else
             {
@@ -159,6 +162,7 @@ public class FlashlightBehaviour : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.G))
         {
             chargeFlash = 0;
+            SFXManager.instance.audioSource.volume = 1;
 
             if (canFlash)
             {
@@ -217,6 +221,7 @@ public class FlashlightBehaviour : MonoBehaviour
 
     IEnumerator FlashRoutine()
     {
+        SFXManager.instance.audioSource.PlayOneShot(flashSFX);
         flLight.intensity = 8;
         flLight.spotAngle = 90;
         flBattery -= 40;
