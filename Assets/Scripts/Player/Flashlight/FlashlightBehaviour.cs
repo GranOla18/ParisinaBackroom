@@ -193,10 +193,10 @@ public class FlashlightBehaviour : MonoBehaviour
                     }
                 }
 
-                //if (!isCharging)
-                //{
-                //    StartCoroutine(ChargeBattery());
-                //}
+                if (!isCharging)
+                {
+                    StartCoroutine(ChargeBattery());
+                }
             }
             if (!isCharging)
             {
