@@ -72,7 +72,7 @@ public class GhostAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerManager>())
+        if (other.GetComponent<PlayerManager>() && !PlayerManager.instance.isHidden)
         {
             StopAllCoroutines();
             agent.isStopped = false;
