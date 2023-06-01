@@ -75,7 +75,10 @@ public class DiscountCloth : Interactable
         int sfx = Random.Range(0, 1);
 
         PlayerMovement.instance.enabled = true;
-        PlayerManager.instance.flashlight.SetActive(true);
+        if (GameManager.instance.playerHasFL)
+        {
+            PlayerManager.instance.flashlight.SetActive(true);
+        }
 
         if (sfx == 0)
         {
