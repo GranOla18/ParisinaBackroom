@@ -74,6 +74,8 @@ public class GhostManager : Interactable
         }
         else
         {
+            StopAllCoroutines();
+            ghost.StartCoroutine(ghost.RoutinePatroll());
             Debug.Log("No damage, player is hidden");
         }
     }

@@ -72,14 +72,18 @@ public class GhostAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerManager>() && !PlayerManager.instance.isHidden)
+        if (other.GetComponent<PlayerManager>())
         {
-            StopAllCoroutines();
-            agent.isStopped = false;
-            sawPlayer = true;
-            //agent.updatePosition
-            agent.SetDestination(other.transform.position);
-            audioSource.Play();
+            if (!PlayerManager.instance.isHidden)
+            {
+                StopAllCoroutines();
+                agent.isStopped = false;
+                sawPlayer = true;
+                //agent.updatePosition
+                agent.SetDestination(other.transform.position);
+                audioSource.Play();
+            }
+            
             Debug.Log("Siguiendo al jugador");
         }
         //else if (other.GetComponent<WalkPointManager>())
