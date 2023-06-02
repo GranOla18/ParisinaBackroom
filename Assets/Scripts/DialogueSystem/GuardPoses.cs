@@ -26,9 +26,9 @@ public class GuardPoses : MonoBehaviour
             GiveFL();
             animator.SetTrigger("Idle");
         }
-        else
+        else if(DialogueSystem.instance.sentences.Count == 0)
         {
-            animator.SetTrigger("Idle");
+            this.enabled = false;
         }
     }
 
@@ -52,7 +52,6 @@ public class GuardPoses : MonoBehaviour
         flPlayer.SetActive(true);
         flGuard.SetActive(false);
         PlayerManager.instance.hasFlashlight = true;
-        this.enabled = false;
     }
 
     public void StopOutline()

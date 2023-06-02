@@ -10,7 +10,7 @@ public class FlashlightBehaviour : MonoBehaviour
     public float flBattery;
     public float flBattPercent;
     public bool canFlash;
-    bool isCharging;
+    public bool isCharging;
 
     public bool canChargeNext;
 

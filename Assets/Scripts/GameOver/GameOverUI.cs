@@ -84,7 +84,7 @@ public class GameOverUI : MonoBehaviour
             gameOverImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, a);
             //blackImg.color = new Color(cc.r, cc.g, cc.b, aB);
 
-            if (a >= 0.99)
+            if (a >= 0.9)
             {
                 hasShownImage = true;
                 gameOverImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, 1);

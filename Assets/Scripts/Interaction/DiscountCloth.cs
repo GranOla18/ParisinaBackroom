@@ -64,7 +64,8 @@ public class DiscountCloth : Interactable
         isHidden = true;
         pM.isHidden = true;
         PlayerMovement.instance.enabled = false;
-        PlayerManager.instance.flashlight.SetActive(false);
+        //PlayerManager.instance.flashlight.SetActive(false);
+        PlayerManager.instance.flashlight.GetComponent<MeshRenderer>().enabled = false;
         StartCoroutine(pM.Choke());
     }
 
@@ -77,7 +78,8 @@ public class DiscountCloth : Interactable
         PlayerMovement.instance.enabled = true;
         if (GameManager.instance.playerHasFL)
         {
-            PlayerManager.instance.flashlight.SetActive(true);
+            //PlayerManager.instance.flashlight.SetActive(true);
+            PlayerManager.instance.flashlight.GetComponent<MeshRenderer>().enabled = true;
         }
 
         if (sfx == 0)

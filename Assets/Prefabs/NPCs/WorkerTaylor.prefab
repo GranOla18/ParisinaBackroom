@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getOutTrigger: {fileID: 0}
-  outline: {fileID: 5489367557084868687}
+  outline: {fileID: 0}
 --- !u!1 &5489367558412607240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,7 +1983,6 @@ GameObject:
   - component: {fileID: 5489367557960855662}
   - component: {fileID: 5489367557084868688}
   - component: {fileID: 5489367557084868689}
-  - component: {fileID: 5489367557084868687}
   m_Layer: 0
   m_Name: WorkerTaylor
   m_TagString: Untagged
@@ -2113,7 +2112,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7700547457109338787}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
@@ -2158,26 +2157,8 @@ MonoBehaviour:
   workTime: 5
   dTEntrega: {fileID: 5489367557191175622}
   hasTurnAround: 0
-  outline: {fileID: 5489367557084868687}
+  outline: {fileID: 5489367557960855662}
   isWorking: 0
---- !u!114 &5489367557084868687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7700547457109338787}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 0.8251295, b: 0, a: 1}
-  outlineWidth: 6
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1 &7894887893404060513
 GameObject:
   m_ObjectHideFlags: 0
